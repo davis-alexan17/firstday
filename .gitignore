@@ -11,3 +11,4 @@
 *.tar
 *.zip
 errors.txt
+*.DS_Store
