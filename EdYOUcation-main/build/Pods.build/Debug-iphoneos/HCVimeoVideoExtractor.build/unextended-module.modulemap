@@ -1,0 +1,10 @@
+framework module HCVimeoVideoExtractor {
+  umbrella header "HCVimeoVideoExtractor-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module HCVimeoVideoExtractor.__Swift {
+    exclude header "HCVimeoVideoExtractor-Swift.h"
+}

@@ -1,0 +1,16 @@
+PODS:
+  - HCVimeoVideoExtractor (0.0.1)
+
+DEPENDENCIES:
+  - HCVimeoVideoExtractor
+
+SPEC REPOS:
+  trunk:
+    - HCVimeoVideoExtractor
+
+SPEC CHECKSUMS:
+  HCVimeoVideoExtractor: d3c251280f7027ffd324266e1930b3618e0adb46
+
+PODFILE CHECKSUM: 737424c2a81c3eb213db5c16163d4e30bf3e1284
+
+COCOAPODS: 1.8.3
