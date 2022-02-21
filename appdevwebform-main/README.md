@@ -55,12 +55,12 @@ flask run
 ```
 
 AWS Setup:
- Setup RDS with a new database - (MySQL, free/whatever).
- Configure the RDS to allow inbound traffic from the beanstalk/anywhere (Under security section of connectivity and security, press the VPC security groups)
- Setup a beanstalk, and then assign it a key-value for a .pem file so you can SSH
- Use the following command template to SSH: "ssh -i "<pemfile path>" ec2-user@<awsurl>"
- After ssh-ing, go to "/var/app/current" and do "pip install -r requirements.txt"
- Then do "export FLASK_APP="application.py"" and you are done :)
+ 1. Setup RDS with a new database - (MySQL, free/whatever).
+ 2. Configure the RDS to allow inbound traffic from the beanstalk/anywhere (Under security section of connectivity and security, press the VPC security groups)
+ 3. Setup a beanstalk, and then assign it a key-value for a .pem file so you can SSH
+ 4. Use the following command template to SSH: "ssh -i "**pemfile path**" ec2-user@**awsurl**"
+ 5. After ssh-ing, go to "/var/app/current" and do "pip install -r requirements.txt"
+ 6. Then do "export FLASK_APP="application.py"" and you are done :)
 
 
 
