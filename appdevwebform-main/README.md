@@ -31,13 +31,27 @@ To run the webform:
 * IV. Functions that basically return the html pages to the browser so that data can be entered.
 * V. A few functions that get all of the database data in put it in json, and one function that listens for a request (from the mobile app) and returns this json. 
 
-
+Mac commands (in command line in the folder with application.py):
+```
+ pip install virtualenv
+ python -m venv venv
+ source venv/bin/activate
+```
+```
+ pip install -r requirements.txt
+ export FLASK_APP=application.py
+```
+  then
+```
+flask init-db
+flask run
+```
 Windows commands (in command line in the folder with application.py):
  ```
- pip install -r requirements.txt
  pip install virtualenv
  python -m venv venv
  venv\scripts\activate
+ pip install -r requirements.txt
 ```
 ```
 set FLASK_APP=application.py
