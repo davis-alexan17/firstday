@@ -33,7 +33,6 @@ To run the webform:
 
 
 Windows commands (in command line in the folder with application.py):
-
  pip install -r requirements.txt
  pip install virtualenv
  python -m venv venv
