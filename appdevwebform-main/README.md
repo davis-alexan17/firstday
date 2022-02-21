@@ -33,13 +33,13 @@ To run the webform:
 
 Mac commands (in command line in the folder with application.py):
 ```
- pip install virtualenv
- python -m venv venv
- source venv/bin/activate
+pip install virtualenv
+python -m venv venv
+source venv/bin/activate
 ```
 ```
- pip install -r requirements.txt
- export FLASK_APP=application.py
+pip install -r requirements.txt
+export FLASK_APP=application.py
 ```
   then
 ```
@@ -48,10 +48,10 @@ flask run
 ```
 Windows commands (in command line in the folder with application.py):
  ```
- pip install virtualenv
- python -m venv venv
- venv\scripts\activate
- pip install -r requirements.txt
+pip install virtualenv
+python -m venv venv
+venv\scripts\activate
+pip install -r requirements.txt
 ```
 ```
 set FLASK_APP=application.py
