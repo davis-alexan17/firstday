@@ -1,0 +1,95 @@
+<!doctype html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <title>EdYOUcation</title>
+  <style>
+  /* The animation code */
+  @keyframes example {
+    from {height: 0px}
+    to {height: 50px;}
+  }
+/*<link rel="stylesheet" type= "text/css" href="styles.css">
+
+
+  /* The element to apply the animation to */
+  .flashes {
+    font-size: 20px;
+    font-weight: 400px;
+    width: 100%;
+    height: 50px;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 1s;
+    transition: height 1s;
+    overflow: hidden;
+    list-style: none;
+    position: absolute;
+    z-index: 10;
+  }
+
+  #divider {
+      width: 2px;
+    background-color: darkgray;
+    height: 100px;
+    float: left;
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-right: 40px;
+  }
+
+  #header {
+    height: 150px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: red;
+    border-radius: 10px;
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+
+
+  #content {
+    margin: 20px;
+  }
+
+  </style>
+  <script>
+    $(document).ready(function() {
+      if( $('#flashZone').length ) {
+        setTimeout(function() {
+          $('#flashZone').height(0);
+        }, 7000);
+      }
+
+
+    });
+  </script>
+  {% block style %}{% endblock %}
+  {% block script %}{% endblock %}
+</head>
+
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul id="flashZone" class=flashes style="float: top">
+    {% for message in messages %}
+      <li style="margin-left: 100px; margin-top: 10px;">{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+<div id="container" style="float: left; width: 1000px; margin-top: 40px; margin-left: 300px;">
+  <div id="header">
+    <h1 style="float: left; display: inline-block; margin-left: 20px; margin-right: 20px; margin-top: 55.5px; color: maroon">EdYOUcation</h1>
+    <div id="divider"> </div>
+    <img style="float: left; display: inline-block;" src="../static/logo.jpeg" height="150px" width="150px">
+  </div>
+  {% block body %}{% endblock %}
+</div>

@@ -1,0 +1,261 @@
+
+
+{% extends "layout.html" %}
+
+{% block style %}
+   <style>
+    li {
+    list-style: none;
+    }
+    .container {
+        position: relative;
+        text-align: center;
+        color: white;
+    }
+    .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+    }
+    </style>
+{% endblock %}
+{% block script %}
+    <script>
+        function showModal() {
+            $('#exampleModal').modal('show')
+        }
+        function showWarningModal() {
+
+        let btn =$('#warningMsg').html('')
+        $('#warningModal').modal('show');
+        }
+        function setFormData(id) {
+            let nm, text, imgPath;
+            if(id === undefined) {
+                $('#name_eng').val("")
+                $('#name_esp').val("")
+                $('#textBody_eng').val("")
+                $('#textBody_esp').val("")
+                $('#vimeoLink').val("")
+                $('#currentImg').hide()
+                $('#saveOrSubmit').val("Submit");
+                $('#modalLabel').html(`Create profile`);
+                $('#update_toggle').attr('name', '');
+                $('#profile_id').attr('name', '')
+                $('#profile_id').val('')
+                $('#deleteProfileButton').hide();
+                $('#hideProfileButton').hide();
+            } else {
+
+                $.getJSON(`/profile_data/${id}`, function(json) {
+                $('#hideProfileButton').show();
+                $('#hideProfileButton').attr('flag', id)
+                $('#deleteProfileButton').show();
+                $('#deleteProfileButton').attr('flag', id)
+                $('#saveOrSubmit').val("Update");
+                $('#modalLabel').html(`Update profile: ${name}`);
+                       if (json.hasImg == 1) {
+                           let imgPath = $(`[tag="${id}"]`).attr('src')
+                           console.log(imgPath);
+                           $('#currentImg').attr('src', imgPath)
+                           $('#currentImg').show()
+                       } else {
+                           $('#currentImg').hide()
+                       }
+                       $('#name_eng').val(json.name_eng);
+                       $('#name_esp').val(json.name_esp);
+                       $('#textBody_eng').val(json.text_eng);
+                       $('#textBody_esp').val(json.text_esp);
+                       $('#vimeoLink').val(json.vimeoLink);
+                       $('#update_toggle').attr('name', 'update');
+                       $('#profile_id').attr('name', 'id')
+                       $('#profile_id').val(id)
+
+                       const hiddenBtn = $('#hideProfileButton');
+                       const hiddenTxt = $('#deleteProfileSubmit');
+               if (json.hidden) {
+                    hiddenBtn.html('Show');
+                  hiddenTxt.val('Show this category')
+
+               } else {
+                 hiddenBtn.html('Hide');
+                 hiddenTxt.val('Hide this category')
+               }
+                });
+            }
+        }
+        $(document).ready(function() {
+            $('.card').on('click', function(e) {
+
+                let mightBeCard = e.target;
+
+                while(mightBeCard.className != "card") {
+                   mightBeCard = mightBeCard.parentNode;
+                   console.log("once");
+                }
+
+                console.log("HELLO", mightBeCard)
+                let tag = mightBeCard.getAttribute("flag")
+                console.log("here", tag);
+                setFormData(tag)
+                showModal()
+            });
+
+            $('a').on('click', function(e) {
+                testf();
+            });
+            function showDeleteProfileModal(e) {
+            showWarningModal();
+            const target = $(e.target);
+            let warningMsg;
+            if(target.attr('id') === 'hideProfileButton') {
+                if(target.html() === 'Hide') 
+                    warningMsg='Are you sure to want to hide this profile? Doing so will prevent students from being able to view this, however this action can be undone at any time.';
+                else
+                    warningMsg='Are you sure to want to show this profile? Students will now be able to view this profile. This action can be undone at any time.';
+                $('#hideForm').show();
+                $('#deleteForm').hide();
+                $('#warningMsg').html(warningMsg);
+                
+            } else {
+                warningMsg='Are you sure you want to delete this profile? <br> At this time, there exist no backups of any deleted profiles, and deleting this profile cannot be undone.';
+                $('#deleteForm').show();
+                $('#hideForm').hide();
+                $('#warningMsg').html(warningMsg);
+            }
+            let id = target.attr("flag")
+            $('#dfPId').attr('value', id)
+            $('#hfPId').attr('value', id)
+        }
+
+        $('#deleteProfileButton').on('click', function(e) {
+            showDeleteProfileModal(e);
+        });
+
+        $('#hideProfileButton').on('click', function(e) {
+            showDeleteProfileModal(e);
+        });
+        });
+
+        function testf() {
+            console.log("Test");
+        }
+
+
+
+       
+    </script>
+{% endblock %}
+
+{% block body %}
+<div>
+  <h6>Currently Editing:</h6>
+  <a href="{{ url_for('school') }}"><h1>{{ category_name }}</h1></a>
+  {% if profiles is none or profiles|length == 0 %}
+    <h5>No profiles have been added yet!</h5>
+  {% else %}
+    <div>
+      <!-- PROFILES (LIST) -->
+      {% for profile in profiles %}
+        <div class="card" style="width: 150px; display: inline-block;" flag="{{ profile.id }}">
+          {% if profile.imgPath %}
+            <img height="150px" width="150px" tag="{{ profile.id }}" id="categoryImg" class="card-img-top" src="{{ url_for('get_img', table='profiles', id=profile.id) }}" alt="Icon image"/>
+          {% endif %}
+          <div class="card-body">
+            <h6 style="font-weight: 200; font-size: 17px" class="card-title" id="profileName">{{ (profile.name_eng if profile.name_eng != None else profile.name_esp) }}</h6>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>
+
+
+<button style="margin-top: 50px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="setFormData(undefined)">
+  Create new profile
+</button>
+
+<!-- CREATE/EDIT PROFILE MODAL -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalLabel">Create new profile</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form method="post" enctype="multipart/form-data">
+        <input id="update_toggle" name="" hidden> <!-- holds "update" name" -->
+        <input id="profile_id" name="id" value="" hidden> <!-- holds "id" value -->
+        <div class="modal-body">
+
+          <!-- NAME_ENG/ESP -->
+          <div class="form-group">
+            <label for="name_eng">Name</label>
+            <input name="name_eng" type="text" class="form-control" id="name_eng" aria-describedby="nameInput" placeholder="Name (english)">
+            <input name="name_esp" type="text" class="form-control" id="name_esp" aria-describedby="nameInput" placeholder="Name (espanol)" style="margin-top: 10px">
+          </div>
+
+          <!-- TEXTBODY_ENG/ESP -->
+          <div class="form-group">
+            <label for="textBody_eng">Enter Bio/Info</label>
+            <textarea class="form-control" id="textBody_eng" rows="3" name="textBody_eng" placeholder="english"></textarea>
+            <textarea class="form-control" id="textBody_esp" rows="3" name="textBody_esp" placeholder="espanol" style="margin-top: 10px"></textarea>
+          </div>
+
+          <!-- VIMEO LINK -->
+          <div class="form-group">
+            <label for="vimeoLink" class="bold-label">Vimeo Link</label>
+            <hr>
+            <input name="vimeoLink" type="text" class="form-control light-label" id="vimeoLink" aria-describedby="nameInput" placeholder="Enter a link/URL to a vimeo video" style="margin-top: 10px;">
+          </div>
+
+          <!-- IMAGE UPLOAD -->
+          <div class="form-group">
+            <label for="iconUpload">Upload an icon or image</label>
+
+            
+
+            <input name="file" type="file" class="form-control-file" id="iconUpload">
+            <img height="100px" width="100px" id="currentImg" src="#">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="deleteProfileButton" class="btn btn-danger">Delete This Profile</button>
+          <button type="button" id="hideProfileButton" class="btn btn-danger">Hide</button>      
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <input type="submit" id="saveOrSubmit" type="button" class="btn btn-primary"></input>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- DELETE PROFILE MODAL -->
+<div class="modal fade" id="warningModal" tabindex="-1" role="dialog" aria-labelledby="warningModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="width: 600px; height: 600px; margin-left: -51px">
+      <div style="margin: 50px; text-align: center;">
+          <div id=warningMsg></div>
+              <input  name="delete" hidden>
+          <div>
+              <br><br>
+              <form method="post" id="deleteForm" style="margin-top: 100px;">
+                  <input id="dfPId" name="dfPId" hidden>
+                  <input id="del"name="delete" hidden>
+                  <input type="submit" class="btn btn-danger" value="Delete this profile.">
+              </form>
+              <form method="post" id="hideForm" style="margin-top: 10px;">
+                  <input id="hfPId" name="hfPId" hidden>
+                  <input name="toggle_hide" hidden>
+                  <input id="deleteProfileSubmit" type="submit" class="btn btn-danger">
+              </form>
+              <button style="margin-top: 10px;" data-dismiss="modal" type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
