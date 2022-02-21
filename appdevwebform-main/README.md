@@ -33,16 +33,25 @@ To run the webform:
 
 
 Windows commands (in command line in the folder with application.py):
+ ```
  pip install -r requirements.txt
  pip install virtualenv
  python -m venv venv
  venv\scripts\activate
-
- set FLASK_APP=application.py or $env:FLASK_APP = "application.py"
- set LOCAL_TEST=True or $env:LOCAL_TEST='yes'
- flask init-db
- flask run
-
+```
+```
+set FLASK_APP=application.py
+set LOCAL_TEST=True
+```
+ or
+```
+$env:FLASK_APP = "application.py"
+$env:LOCAL_TEST='yes'
+```
+```
+flask init-db
+flask run
+```
 
 AWS Setup:
 Setup RDS with a new database - (MySQL, free/whatever).
