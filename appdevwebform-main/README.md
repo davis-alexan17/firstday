@@ -31,7 +31,7 @@ To run the webform:
 * IV. Functions that basically return the html pages to the browser so that data can be entered.
 * V. A few functions that get all of the database data in put it in json, and one function that listens for a request (from the mobile app) and returns this json. 
 
-Mac commands (in command line in the folder with application.py):
+# Mac Commands
 ```
 pip install virtualenv
 python -m venv venv
@@ -46,7 +46,7 @@ export FLASK_APP=application.py
 flask init-db
 flask run
 ```
-Windows commands (in command line in the folder with application.py):
+# Windows Commands
  ```
 pip install virtualenv
 python -m venv venv
@@ -68,7 +68,7 @@ flask init-db
 flask run
 ```
 
-AWS Setup:
+# AWS Setup
  1. Setup RDS with a new database - (MySQL, free/whatever).
  2. Configure the RDS to allow inbound traffic from the beanstalk/anywhere (Under security section of connectivity and security, press the VPC security groups)
  3. Setup a beanstalk, and then assign it a key-value for a .pem file so you can SSH
