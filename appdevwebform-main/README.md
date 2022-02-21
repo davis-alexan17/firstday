@@ -48,37 +48,19 @@ set LOCAL_TEST=True
 $env:FLASK_APP = "application.py"
 $env:LOCAL_TEST='yes'
 ```
+ then
 ```
 flask init-db
 flask run
 ```
 
 AWS Setup:
-Setup RDS with a new database - (MySQL, free/whatever).
-Configure the RDS to allow inbound traffic from the beanstalk/anywhere (Under security section of connectivity and security, press the VPC security groups)
-Setup a beanstalk, and then assign it a key-value for a .pem file so you can SSH
-Use the following command template to SSH: "ssh -i "C:\Users\alexd\Downloads\appdev.pem" ec2-user@ec2-54-167-96-206.compute-1.amazonaws.com"
-After ssh-ing, go to "/var/app/current" and do "pip install -r requirements.txt"
-Then do "export FLASK_APP="application.py"" and you are done :)
+ Setup RDS with a new database - (MySQL, free/whatever).
+ Configure the RDS to allow inbound traffic from the beanstalk/anywhere (Under security section of connectivity and security, press the VPC security groups)
+ Setup a beanstalk, and then assign it a key-value for a .pem file so you can SSH
+ Use the following command template to SSH: "ssh -i "<pemfile path>" ec2-user@<awsurl>"
+ After ssh-ing, go to "/var/app/current" and do "pip install -r requirements.txt"
+ Then do "export FLASK_APP="application.py"" and you are done :)
 
 
-Error mac:
-[2021-11-04 14:36:16,936] ERROR in app: Exception on /getimg/profiles/1 [GET]
-Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/alex/Desktop/AppDev/appdevwebform-main/application.py", line 85, in decorated_function
-    return f(*args, **kwargs)
-  File "/Users/alex/Desktop/AppDev/appdevwebform-main/application.py", line 153, in get_img
-    return send_from_directory(app.config['UPLOAD_FOLDER'], profile.imgPath)
-AttributeError: 'NoneType' object has no attribute 'imgPath'
+
