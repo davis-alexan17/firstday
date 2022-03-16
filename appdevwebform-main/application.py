@@ -3,6 +3,7 @@ from os.path import join, dirname, realpath
 from flask import Flask, render_template, request, redirect, g, url_for, flash, session, jsonify, send_from_directory
 from functools import wraps
 from werkzeug.utils import secure_filename
+import datetime
 # ENV VARIABLES +
 #Second category added when updating spanish name from nothing, without updating english name initially
 
@@ -30,6 +31,7 @@ def rand():
 from database import School, AuthManager, Category, Profile, db
 from swift_app import get_schools
 db.init_app(app)
+
 #==========================================================DB Formation above
 
 @app.cli.command('json')
@@ -125,7 +127,6 @@ def allowed_file(filename):
 @login_required
 def get_icon(path):
     return send_from_directory(app.config['UPLOAD_FOLDER'], path)
-
 
 @app.route("/getimg/<table>/<id>", methods=("GET",))
 @login_required
@@ -359,7 +360,7 @@ def manage_category(category_id):
         early_return_template = render_template('manage_category.html',
                                                 category_name=(category.name_eng if category.name_eng is not None
                                                                else category.name_esp),
-                                                profiles=category.profiles)
+                                                profiles=category.profiles, time=datetime.datetime.now().second)
         if 'dfPId' in request.form:
             profile_to_delete = Profile.query.filter_by(id=request.form['dfPId']).first()
             print(profile_to_delete)
@@ -384,10 +385,8 @@ def manage_category(category_id):
             return early_return_template
 
         # Check to see if request is to update:
-        if "update" in request.form:
-            update_mode = True
-        else:
-            update_mode = False
+        
+        update_mode = "update" in request.form
 
         # Find profile from id:
         profile = None
@@ -396,7 +395,7 @@ def manage_category(category_id):
         if profile is not None and update_mode is False:
             flash("Category already exists")
             return render_template('manage_category.html', category_name=(category.name_eng if category.name_eng is not
-                                                                          None else category.name_esp), profiles=category.profiles)
+                                                                          None else category.name_esp), profiles=category.profiles, time=datetime.datetime.now().second)
 
         # Extract data from request.form
         if "textBody_eng" not in request.form:
@@ -435,7 +434,6 @@ def manage_category(category_id):
                 
             else:
                 flash("Issue uploading file")
-
         # Save/upload profile
 
         if update_mode:
@@ -445,8 +443,10 @@ def manage_category(category_id):
             profile.name_esp = p_name_esp
             profile.vimeoLink = vimeoLink
             #moved this here temporarily
-            profile.imgPath = p_imgPath
+            if p_imgPath is not None: profile.imgPath = p_imgPath 
             db.session.commit()
+            #TEMPORARY PATCH FOR PROFILE IMAGES NOT UPDATING SINCE CACHE BEING ANNOYING
+            #return redirect(url_for('school'))
         else:
             new_profile = Profile(category_id=category.id,
                                   name_eng=p_name_eng,
@@ -464,7 +464,7 @@ def manage_category(category_id):
     return render_template('manage_category.html',
                            category_name=(category.name_eng if category.name_eng is not None
                                           else category.name_esp),
-                           profiles=category.profiles)
+                           profiles=category.profiles, time=datetime.datetime.now().second)
 
 
 #================================FLASK HTML INTERACTION ABOVE

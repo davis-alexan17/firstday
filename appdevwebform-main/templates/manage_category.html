@@ -1,7 +1,6 @@
 
 
 {% extends "layout.html" %}
-
 {% block style %}
    <style>
     li {
@@ -18,7 +17,7 @@
         left: 50%;
         transform: translate(-50%, 0%);
     }
-    </style>
+    </style>   
 {% endblock %}
 {% block script %}
     <script>
@@ -56,7 +55,7 @@
                 $('#saveOrSubmit').val("Update");
                 $('#modalLabel').html(`Update profile: ${name}`);
                        if (json.hasImg == 1) {
-                           let imgPath = $(`[tag="${id}"]`).attr('src')
+                           let imgPath = $(`[tag="${id}"]`).attr('src') 
                            console.log(imgPath);
                            $('#currentImg').attr('src', imgPath)
                            $('#currentImg').show()
@@ -142,16 +141,15 @@
             console.log("Test");
         }
 
-
-
        
     </script>
 {% endblock %}
 
 {% block body %}
+<meta http-equiv="Cache-Control" content="no-store">
 <div>
   <h6>Currently Editing:</h6>
-  <a href="{{ url_for('school') }}"><h1>{{ category_name }}</h1></a>
+  <a href="{{ url_for('school') }}" name="home"><h1>{{ category_name }}</h1></a>
   {% if profiles is none or profiles|length == 0 %}
     <h5>No profiles have been added yet!</h5>
   {% else %}
@@ -160,7 +158,7 @@
       {% for profile in profiles %}
         <div class="card" style="width: 150px; display: inline-block;" flag="{{ profile.id }}">
           {% if profile.imgPath %}
-            <img height="150px" width="150px" tag="{{ profile.id }}" id="categoryImg" class="card-img-top" src="{{ url_for('get_img', table='profiles', id=profile.id) }}" alt="Icon image"/>
+            <img height="150px" width="150px" tag="{{ profile.id }}" id="categoryImg" class="card-img-top" src="{{ url_for('get_img', table='profiles', id=profile.id) }}?x={{ time }}" alt="Icon image"/>
           {% endif %}
           <div class="card-body">
             <h6 style="font-weight: 200; font-size: 17px" class="card-title" id="profileName">{{ (profile.name_eng if profile.name_eng != None else profile.name_esp) }}</h6>
@@ -188,7 +186,7 @@
       </div>
       <form method="post" enctype="multipart/form-data">
         <input id="update_toggle" name="" hidden> <!-- holds "update" name" -->
-        <input id="profile_id" name="id" value="" hidden> <!-- holds "id" value -->
+        <input id="profile_id" name="id" value="" hidden> <!-- holds "id" value window.location.href = document.getElementById('home').href-->
         <div class="modal-body">
 
           <!-- NAME_ENG/ESP -->
