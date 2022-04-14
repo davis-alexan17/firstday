@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		121553734AFCC3FC83357F79 /* Pods_AppDevAlpha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5AB3351668150584BCA4118 /* Pods_AppDevAlpha.framework */; };
 		63415A4D2517FE540085836B /* OpenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63415A4C2517FE540085836B /* OpenViewController.swift */; };
 		63415A4F2517FE670085836B /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63415A4E2517FE670085836B /* CategoryViewController.swift */; };
 		63415A512517FEF90085836B /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63415A502517FEF90085836B /* ItemViewController.swift */; };
@@ -36,6 +37,7 @@
 		6AFF70B5F77A87CAF3626135 /* Pods-AppDevAlpha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppDevAlpha.debug.xcconfig"; path = "Target Support Files/Pods-AppDevAlpha/Pods-AppDevAlpha.debug.xcconfig"; sourceTree = "<group>"; };
 		6C0FA41FDBE00106694ED911 /* Pods-AppDevAlpha-AppDevAlphaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppDevAlpha-AppDevAlphaUITests.debug.xcconfig"; path = "Target Support Files/Pods-AppDevAlpha-AppDevAlphaUITests/Pods-AppDevAlpha-AppDevAlphaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8AFE57229841031E4DFEC0AB /* Pods-AppDevAlphaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppDevAlphaTests.release.xcconfig"; path = "Target Support Files/Pods-AppDevAlphaTests/Pods-AppDevAlphaTests.release.xcconfig"; sourceTree = "<group>"; };
+		B5AB3351668150584BCA4118 /* Pods_AppDevAlpha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppDevAlpha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA7ECCD540555236DEF79D0E /* Pods-AppDevAlphaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppDevAlphaTests.debug.xcconfig"; path = "Target Support Files/Pods-AppDevAlphaTests/Pods-AppDevAlphaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CEA972FC23B2ABB100309B2D /* SchoolStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolStruct.swift; sourceTree = "<group>"; };
 		F4B10AED233430AD00890FAC /* AppDevAlpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppDevAlpha.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				121553734AFCC3FC83357F79 /* Pods_AppDevAlpha.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +103,14 @@
 			path = ListViewController;
 			sourceTree = "<group>";
 		};
+		7F9B20AEF624F4715166385D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B5AB3351668150584BCA4118 /* Pods_AppDevAlpha.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A3960CFCBD42BCDE177FE919 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +130,7 @@
 				F4B10AEF233430AD00890FAC /* AppDevAlpha */,
 				F4B10AEE233430AD00890FAC /* Products */,
 				A3960CFCBD42BCDE177FE919 /* Pods */,
+				7F9B20AEF624F4715166385D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

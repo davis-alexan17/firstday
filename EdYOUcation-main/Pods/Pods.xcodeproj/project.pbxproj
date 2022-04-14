@@ -3,42 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1618C3B7475D22C0A898F7591BFD9896 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		24D3D9FCBC683F45FF4A40C93C912A68 /* HCVimeoVideoExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A60711836E638F5B66A38A708B853FF /* HCVimeoVideoExtractor.swift */; };
-		2C24A601FF1C6DA829CD22BC47D2588E /* Pods-AppDevAlpha-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 579155275F2BAC6E5FDA688D2320CAD1 /* Pods-AppDevAlpha-dummy.m */; };
-		59EDEA2ABA52E1FD91EA969D86E0776A /* HCVimeoVideoExtractor-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 28841ABC286023DCEAEF72626E484062 /* HCVimeoVideoExtractor-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6487DAFD4F4960D83138C398E55584A8 /* Pods-AppDevAlphaTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E04EA8743A929B3EBD40D37BDDA3C0A /* Pods-AppDevAlphaTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6989E2DAC4D18F0E0CEE01489272708C /* Pods-AppDevAlpha-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2647D02418BD34737281991CF7C1004F /* Pods-AppDevAlpha-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8DFE0BD27C53E3347B60163CFA51FEF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		9AAED79190B2B26386A1BFC38D0608C2 /* Pods-AppDevAlpha-AppDevAlphaUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F9116CFC0E98FC675E30EBAFBE3B8BB2 /* Pods-AppDevAlpha-AppDevAlphaUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B58DF731C73539435D7A351820C2A1C0 /* HCVimeoVideoExtractor-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E702D9F53DEC7C5415593AFF61898223 /* HCVimeoVideoExtractor-dummy.m */; };
-		D66BE529F69D3C74CFE49AFC9C1AF031 /* Pods-AppDevAlpha-AppDevAlphaUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FCEA715AD871A89DB84FE27D92432B29 /* Pods-AppDevAlpha-AppDevAlphaUITests-dummy.m */; };
-		D82BECBF54281313E91B5ADFE5785FDD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		DC544AF6ED65B495989AED4D88763D5D /* HCVimeoVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135821A47A5DE04BC4DBD2D6805BB7F8 /* HCVimeoVideo.swift */; };
-		F3C1EF99031F32C9B0E6FD88D04925ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		FE8BB97D0798983AA653816E4445B91B /* Pods-AppDevAlphaTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D140B3C672FDEB1D4DEE4057823282 /* Pods-AppDevAlphaTests-dummy.m */; };
+		162CADE0982500D4D98BF1B990A96014 /* HCVimeoVideoExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088B628CF495B72CB3C91E76BCD48E7 /* HCVimeoVideoExtractor.swift */; };
+		2D0C5CC67C9A34AD88AB88DC8515445A /* Pods-AppDevAlpha-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD2771C1BFC5BC2AAE3806BF116529F /* Pods-AppDevAlpha-dummy.m */; };
+		3D9C5AF20CF437C1EC8348793B9B53EA /* Pods-AppDevAlpha-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ADF9BE0D8E66910E438EDD2ED79B124D /* Pods-AppDevAlpha-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3F07DE8AE9D0E8D496F6044FF86F80B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		BB5D627AB86BF2C2CE46F3BEE1C85974 /* HCVimeoVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8754F33676BB790B885BD32227753B5A /* HCVimeoVideo.swift */; };
+		EA27890CB0EFC1773DE461BBF5291F59 /* HCVimeoVideoExtractor-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9613B96EF469431B2C0F8313A8A287E3 /* HCVimeoVideoExtractor-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F0F429737019B0B3F56A51A42313BAF0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		F7219773DEC841419DAF3A142EFDE173 /* HCVimeoVideoExtractor-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 714F6FBFFB39E0B44ED56EBF695177FC /* HCVimeoVideoExtractor-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3DD91C007A62FB2676073495DF28E083 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E939424EF028FF5B888F986BF865A031;
-			remoteInfo = HCVimeoVideoExtractor;
-		};
-		681324AF1785199F4906602983585D6D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5706ACF37DA28118FEEB82DFBF949B8C;
-			remoteInfo = "Pods-AppDevAlpha";
-		};
-		C6DAD50E70C5775AE9A0C3EB282E2EBA /* PBXContainerItemProxy */ = {
+		D4074EC6CF23B817D852A0DC2FDC6086 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -48,182 +28,124 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		135821A47A5DE04BC4DBD2D6805BB7F8 /* HCVimeoVideo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HCVimeoVideo.swift; path = HCVimeoVideoExtractor/Classes/HCVimeoVideo.swift; sourceTree = "<group>"; };
-		2040D05B3427D35A19A3A44B9F83DF95 /* Pods-AppDevAlphaTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AppDevAlphaTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		2161613A66E7A880C900FA8FEB2054DE /* HCVimeoVideoExtractor-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "HCVimeoVideoExtractor-Info.plist"; sourceTree = "<group>"; };
-		2285D6FB79D29E1507392F0A94FCC7C4 /* HCVimeoVideoExtractor.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = HCVimeoVideoExtractor.modulemap; sourceTree = "<group>"; };
-		235506D369EEB89111AE5B5F89DE6DE0 /* Pods-AppDevAlpha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AppDevAlpha.release.xcconfig"; sourceTree = "<group>"; };
-		24CC198A35718A48F6B09EA0E76F1ADA /* Pods-AppDevAlpha-AppDevAlphaUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AppDevAlpha-AppDevAlphaUITests.modulemap"; sourceTree = "<group>"; };
-		2647D02418BD34737281991CF7C1004F /* Pods-AppDevAlpha-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AppDevAlpha-umbrella.h"; sourceTree = "<group>"; };
-		28841ABC286023DCEAEF72626E484062 /* HCVimeoVideoExtractor-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HCVimeoVideoExtractor-umbrella.h"; sourceTree = "<group>"; };
-		304D9089FD76FC179CBB72CD4E1E1606 /* HCVimeoVideoExtractor-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HCVimeoVideoExtractor-prefix.pch"; sourceTree = "<group>"; };
-		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		32D767CBBF2F62D7C2B7065521784313 /* Pods-AppDevAlpha-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AppDevAlpha-Info.plist"; sourceTree = "<group>"; };
-		332C9585C81E827698A24598CF6DD226 /* Pods-AppDevAlpha-AppDevAlphaUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AppDevAlpha-AppDevAlphaUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		342DC9BE48A8AFEB53EEA87645073BE2 /* HCVimeoVideoExtractor.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HCVimeoVideoExtractor.xcconfig; sourceTree = "<group>"; };
-		3DF36439ACA2F26D643DAF8AC3A92C4A /* Pods-AppDevAlphaTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AppDevAlphaTests.modulemap"; sourceTree = "<group>"; };
-		425E26CA53D9523E35B1E89078CF1DDA /* Pods-AppDevAlpha-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AppDevAlpha-acknowledgements.plist"; sourceTree = "<group>"; };
-		426DB6CD162DDC5EA107030A2C052ECE /* Pods-AppDevAlpha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AppDevAlpha.debug.xcconfig"; sourceTree = "<group>"; };
-		4421CFD0CC75F0A97ECB2A990828CF1B /* Pods-AppDevAlphaTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AppDevAlphaTests-Info.plist"; sourceTree = "<group>"; };
-		4FB27207AE6506B33CF29F2234CB0A03 /* Pods_AppDevAlpha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppDevAlpha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		579155275F2BAC6E5FDA688D2320CAD1 /* Pods-AppDevAlpha-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AppDevAlpha-dummy.m"; sourceTree = "<group>"; };
-		6135C081900C0EC6BB59B19CDAC02ADA /* Pods-AppDevAlpha-AppDevAlphaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AppDevAlpha-AppDevAlphaUITests.release.xcconfig"; sourceTree = "<group>"; };
-		662D5AAB499BAC3BB39DC61D5F54AC0D /* Pods-AppDevAlpha.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AppDevAlpha.modulemap"; sourceTree = "<group>"; };
-		74C8E70607FDCF3E85CB22761E4D4151 /* Pods-AppDevAlpha-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AppDevAlpha-frameworks.sh"; sourceTree = "<group>"; };
-		75D140B3C672FDEB1D4DEE4057823282 /* Pods-AppDevAlphaTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AppDevAlphaTests-dummy.m"; sourceTree = "<group>"; };
-		79A9F4E6E9870D236F1EF01D690684E7 /* Pods-AppDevAlpha-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AppDevAlpha-acknowledgements.markdown"; sourceTree = "<group>"; };
-		7A60711836E638F5B66A38A708B853FF /* HCVimeoVideoExtractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HCVimeoVideoExtractor.swift; path = HCVimeoVideoExtractor/Classes/HCVimeoVideoExtractor.swift; sourceTree = "<group>"; };
-		8E04EA8743A929B3EBD40D37BDDA3C0A /* Pods-AppDevAlphaTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AppDevAlphaTests-umbrella.h"; sourceTree = "<group>"; };
-		9B37AC3F978BE2AD493F06EF26E26C35 /* Pods-AppDevAlphaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AppDevAlphaTests.release.xcconfig"; sourceTree = "<group>"; };
-		9D5C011823314F11B806DEA63CB9452C /* Pods-AppDevAlphaTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AppDevAlphaTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A238D8B40918338F1B3E49DA6EF4E1B0 /* Pods-AppDevAlpha-AppDevAlphaUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AppDevAlpha-AppDevAlphaUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		A9AEC33B50E9F22CD7428148F9C6F7BF /* Pods_AppDevAlphaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppDevAlphaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BCC20EC9CE85F3BB29FDD34DC7DBC177 /* Pods-AppDevAlpha-AppDevAlphaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AppDevAlpha-AppDevAlphaUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		C3FAA98DB3CD1914444AE89B40289A5D /* Pods-AppDevAlpha-AppDevAlphaUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AppDevAlpha-AppDevAlphaUITests-frameworks.sh"; sourceTree = "<group>"; };
-		C6F946248D27BD7B1C11C9CA0453D2F1 /* Pods_AppDevAlpha_AppDevAlphaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppDevAlpha_AppDevAlphaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D06C467C3C974EDEFBFE48BBE2389D21 /* HCVimeoVideoExtractor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HCVimeoVideoExtractor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8298754BDB759B5DFC565E7B08F14A6 /* Pods-AppDevAlphaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AppDevAlphaTests.debug.xcconfig"; sourceTree = "<group>"; };
-		E702D9F53DEC7C5415593AFF61898223 /* HCVimeoVideoExtractor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HCVimeoVideoExtractor-dummy.m"; sourceTree = "<group>"; };
-		F675385CE11ED1497505098D452EBDB1 /* Pods-AppDevAlpha-AppDevAlphaUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AppDevAlpha-AppDevAlphaUITests-Info.plist"; sourceTree = "<group>"; };
-		F9116CFC0E98FC675E30EBAFBE3B8BB2 /* Pods-AppDevAlpha-AppDevAlphaUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AppDevAlpha-AppDevAlphaUITests-umbrella.h"; sourceTree = "<group>"; };
-		FCEA715AD871A89DB84FE27D92432B29 /* Pods-AppDevAlpha-AppDevAlphaUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AppDevAlpha-AppDevAlphaUITests-dummy.m"; sourceTree = "<group>"; };
+		33296D8DD5D3BB56DC4FCCDF50C8AD6D /* HCVimeoVideoExtractor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HCVimeoVideoExtractor.release.xcconfig; sourceTree = "<group>"; };
+		4FB27207AE6506B33CF29F2234CB0A03 /* Pods-AppDevAlpha */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-AppDevAlpha"; path = Pods_AppDevAlpha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		553C21DF14A180EEF6C7DB55921A4CA3 /* Pods-AppDevAlpha-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AppDevAlpha-acknowledgements.markdown"; sourceTree = "<group>"; };
+		590856057FA144021DBB3254FF065427 /* HCVimeoVideoExtractor-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HCVimeoVideoExtractor-prefix.pch"; sourceTree = "<group>"; };
+		597A2CE58831CAC7FA5C6DF13A8C9467 /* HCVimeoVideoExtractor.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = HCVimeoVideoExtractor.modulemap; sourceTree = "<group>"; };
+		6243ACADF8D339E44AEBBFCC60829156 /* Pods-AppDevAlpha.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AppDevAlpha.modulemap"; sourceTree = "<group>"; };
+		69E4ED425BCFBF08FCE15ED562EA639F /* HCVimeoVideoExtractor-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "HCVimeoVideoExtractor-Info.plist"; sourceTree = "<group>"; };
+		714F6FBFFB39E0B44ED56EBF695177FC /* HCVimeoVideoExtractor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HCVimeoVideoExtractor-dummy.m"; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		8754F33676BB790B885BD32227753B5A /* HCVimeoVideo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HCVimeoVideo.swift; path = HCVimeoVideoExtractor/Classes/HCVimeoVideo.swift; sourceTree = "<group>"; };
+		9613B96EF469431B2C0F8313A8A287E3 /* HCVimeoVideoExtractor-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HCVimeoVideoExtractor-umbrella.h"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		ADF9BE0D8E66910E438EDD2ED79B124D /* Pods-AppDevAlpha-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AppDevAlpha-umbrella.h"; sourceTree = "<group>"; };
+		C1D5A33889A2E46A20421EA67DF0EF74 /* Pods-AppDevAlpha-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AppDevAlpha-frameworks.sh"; sourceTree = "<group>"; };
+		CBD2771C1BFC5BC2AAE3806BF116529F /* Pods-AppDevAlpha-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AppDevAlpha-dummy.m"; sourceTree = "<group>"; };
+		D06C467C3C974EDEFBFE48BBE2389D21 /* HCVimeoVideoExtractor */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = HCVimeoVideoExtractor; path = HCVimeoVideoExtractor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D46A6A7BD5FA5ACC851D7F12F73573B2 /* Pods-AppDevAlpha-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AppDevAlpha-acknowledgements.plist"; sourceTree = "<group>"; };
+		DA077C270562BEC7E155996FB85485EB /* HCVimeoVideoExtractor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HCVimeoVideoExtractor.debug.xcconfig; sourceTree = "<group>"; };
+		DCE92BE3B28E9F7C002644CD151F4B55 /* Pods-AppDevAlpha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AppDevAlpha.release.xcconfig"; sourceTree = "<group>"; };
+		EB7C8AB0A62243A1533070F89A173B96 /* Pods-AppDevAlpha-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AppDevAlpha-Info.plist"; sourceTree = "<group>"; };
+		F088B628CF495B72CB3C91E76BCD48E7 /* HCVimeoVideoExtractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HCVimeoVideoExtractor.swift; path = HCVimeoVideoExtractor/Classes/HCVimeoVideoExtractor.swift; sourceTree = "<group>"; };
+		F3AB52118948EF43250E937725070A37 /* Pods-AppDevAlpha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AppDevAlpha.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0B7DC3C3A284A40B9A07BB3A8CAC8B2B /* Frameworks */ = {
+		ACED257F9381C892E6C6385AFF6DA983 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1618C3B7475D22C0A898F7591BFD9896 /* Foundation.framework in Frameworks */,
+				B3F07DE8AE9D0E8D496F6044FF86F80B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1C7BFB827BB8671441189C1E74B96B96 /* Frameworks */ = {
+		E3E553D2A1142EEA607BCC75534DEDC2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DFE0BD27C53E3347B60163CFA51FEF9 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3844AE598EA9ACBFBC49F6575C3C0BEF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D82BECBF54281313E91B5ADFE5785FDD /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ED18E9A217DF69BBD4B7FFD6BC68CF9E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F3C1EF99031F32C9B0E6FD88D04925ED /* Foundation.framework in Frameworks */,
+				F0F429737019B0B3F56A51A42313BAF0 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3362EB72559DF8B40385B424623B4573 /* Pods-AppDevAlphaTests */ = {
+		12D8D777FEDC2A73E5A9EFB77580250D /* Pods-AppDevAlpha */ = {
 			isa = PBXGroup;
 			children = (
-				3DF36439ACA2F26D643DAF8AC3A92C4A /* Pods-AppDevAlphaTests.modulemap */,
-				2040D05B3427D35A19A3A44B9F83DF95 /* Pods-AppDevAlphaTests-acknowledgements.markdown */,
-				9D5C011823314F11B806DEA63CB9452C /* Pods-AppDevAlphaTests-acknowledgements.plist */,
-				75D140B3C672FDEB1D4DEE4057823282 /* Pods-AppDevAlphaTests-dummy.m */,
-				4421CFD0CC75F0A97ECB2A990828CF1B /* Pods-AppDevAlphaTests-Info.plist */,
-				8E04EA8743A929B3EBD40D37BDDA3C0A /* Pods-AppDevAlphaTests-umbrella.h */,
-				D8298754BDB759B5DFC565E7B08F14A6 /* Pods-AppDevAlphaTests.debug.xcconfig */,
-				9B37AC3F978BE2AD493F06EF26E26C35 /* Pods-AppDevAlphaTests.release.xcconfig */,
-			);
-			name = "Pods-AppDevAlphaTests";
-			path = "Target Support Files/Pods-AppDevAlphaTests";
-			sourceTree = "<group>";
-		};
-		55E9690A41CFB12AD5C504629A1B0B50 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				2285D6FB79D29E1507392F0A94FCC7C4 /* HCVimeoVideoExtractor.modulemap */,
-				342DC9BE48A8AFEB53EEA87645073BE2 /* HCVimeoVideoExtractor.xcconfig */,
-				E702D9F53DEC7C5415593AFF61898223 /* HCVimeoVideoExtractor-dummy.m */,
-				2161613A66E7A880C900FA8FEB2054DE /* HCVimeoVideoExtractor-Info.plist */,
-				304D9089FD76FC179CBB72CD4E1E1606 /* HCVimeoVideoExtractor-prefix.pch */,
-				28841ABC286023DCEAEF72626E484062 /* HCVimeoVideoExtractor-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/HCVimeoVideoExtractor";
-			sourceTree = "<group>";
-		};
-		6F3EAA03D0A401CA0CE6464D99051379 /* HCVimeoVideoExtractor */ = {
-			isa = PBXGroup;
-			children = (
-				135821A47A5DE04BC4DBD2D6805BB7F8 /* HCVimeoVideo.swift */,
-				7A60711836E638F5B66A38A708B853FF /* HCVimeoVideoExtractor.swift */,
-				55E9690A41CFB12AD5C504629A1B0B50 /* Support Files */,
-			);
-			path = HCVimeoVideoExtractor;
-			sourceTree = "<group>";
-		};
-		827E5D9C1CC1FA21DA09565537CA1C54 /* Pods-AppDevAlpha-AppDevAlphaUITests */ = {
-			isa = PBXGroup;
-			children = (
-				24CC198A35718A48F6B09EA0E76F1ADA /* Pods-AppDevAlpha-AppDevAlphaUITests.modulemap */,
-				332C9585C81E827698A24598CF6DD226 /* Pods-AppDevAlpha-AppDevAlphaUITests-acknowledgements.markdown */,
-				A238D8B40918338F1B3E49DA6EF4E1B0 /* Pods-AppDevAlpha-AppDevAlphaUITests-acknowledgements.plist */,
-				FCEA715AD871A89DB84FE27D92432B29 /* Pods-AppDevAlpha-AppDevAlphaUITests-dummy.m */,
-				C3FAA98DB3CD1914444AE89B40289A5D /* Pods-AppDevAlpha-AppDevAlphaUITests-frameworks.sh */,
-				F675385CE11ED1497505098D452EBDB1 /* Pods-AppDevAlpha-AppDevAlphaUITests-Info.plist */,
-				F9116CFC0E98FC675E30EBAFBE3B8BB2 /* Pods-AppDevAlpha-AppDevAlphaUITests-umbrella.h */,
-				BCC20EC9CE85F3BB29FDD34DC7DBC177 /* Pods-AppDevAlpha-AppDevAlphaUITests.debug.xcconfig */,
-				6135C081900C0EC6BB59B19CDAC02ADA /* Pods-AppDevAlpha-AppDevAlphaUITests.release.xcconfig */,
-			);
-			name = "Pods-AppDevAlpha-AppDevAlphaUITests";
-			path = "Target Support Files/Pods-AppDevAlpha-AppDevAlphaUITests";
-			sourceTree = "<group>";
-		};
-		8586DCCCA0B7D3D0DF476A593AE6EC9A /* Pods-AppDevAlpha */ = {
-			isa = PBXGroup;
-			children = (
-				662D5AAB499BAC3BB39DC61D5F54AC0D /* Pods-AppDevAlpha.modulemap */,
-				79A9F4E6E9870D236F1EF01D690684E7 /* Pods-AppDevAlpha-acknowledgements.markdown */,
-				425E26CA53D9523E35B1E89078CF1DDA /* Pods-AppDevAlpha-acknowledgements.plist */,
-				579155275F2BAC6E5FDA688D2320CAD1 /* Pods-AppDevAlpha-dummy.m */,
-				74C8E70607FDCF3E85CB22761E4D4151 /* Pods-AppDevAlpha-frameworks.sh */,
-				32D767CBBF2F62D7C2B7065521784313 /* Pods-AppDevAlpha-Info.plist */,
-				2647D02418BD34737281991CF7C1004F /* Pods-AppDevAlpha-umbrella.h */,
-				426DB6CD162DDC5EA107030A2C052ECE /* Pods-AppDevAlpha.debug.xcconfig */,
-				235506D369EEB89111AE5B5F89DE6DE0 /* Pods-AppDevAlpha.release.xcconfig */,
+				6243ACADF8D339E44AEBBFCC60829156 /* Pods-AppDevAlpha.modulemap */,
+				553C21DF14A180EEF6C7DB55921A4CA3 /* Pods-AppDevAlpha-acknowledgements.markdown */,
+				D46A6A7BD5FA5ACC851D7F12F73573B2 /* Pods-AppDevAlpha-acknowledgements.plist */,
+				CBD2771C1BFC5BC2AAE3806BF116529F /* Pods-AppDevAlpha-dummy.m */,
+				C1D5A33889A2E46A20421EA67DF0EF74 /* Pods-AppDevAlpha-frameworks.sh */,
+				EB7C8AB0A62243A1533070F89A173B96 /* Pods-AppDevAlpha-Info.plist */,
+				ADF9BE0D8E66910E438EDD2ED79B124D /* Pods-AppDevAlpha-umbrella.h */,
+				F3AB52118948EF43250E937725070A37 /* Pods-AppDevAlpha.debug.xcconfig */,
+				DCE92BE3B28E9F7C002644CD151F4B55 /* Pods-AppDevAlpha.release.xcconfig */,
 			);
 			name = "Pods-AppDevAlpha";
 			path = "Target Support Files/Pods-AppDevAlpha";
 			sourceTree = "<group>";
 		};
-		8DBD2F2A321AFA3F7D2D579B0F29CCB3 /* Targets Support Files */ = {
+		26D8E308D758373072346AF137D3BC49 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				8586DCCCA0B7D3D0DF476A593AE6EC9A /* Pods-AppDevAlpha */,
-				827E5D9C1CC1FA21DA09565537CA1C54 /* Pods-AppDevAlpha-AppDevAlphaUITests */,
-				3362EB72559DF8B40385B424623B4573 /* Pods-AppDevAlphaTests */,
+				12D8D777FEDC2A73E5A9EFB77580250D /* Pods-AppDevAlpha */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		409225527C4DCCBF96F5FB1297CF69C5 /* HCVimeoVideoExtractor */ = {
+			isa = PBXGroup;
+			children = (
+				8754F33676BB790B885BD32227753B5A /* HCVimeoVideo.swift */,
+				F088B628CF495B72CB3C91E76BCD48E7 /* HCVimeoVideoExtractor.swift */,
+				4B19B6D5128C10F502565EE83AEC92D5 /* Support Files */,
+			);
+			name = HCVimeoVideoExtractor;
+			path = HCVimeoVideoExtractor;
+			sourceTree = "<group>";
+		};
+		4B19B6D5128C10F502565EE83AEC92D5 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				597A2CE58831CAC7FA5C6DF13A8C9467 /* HCVimeoVideoExtractor.modulemap */,
+				714F6FBFFB39E0B44ED56EBF695177FC /* HCVimeoVideoExtractor-dummy.m */,
+				69E4ED425BCFBF08FCE15ED562EA639F /* HCVimeoVideoExtractor-Info.plist */,
+				590856057FA144021DBB3254FF065427 /* HCVimeoVideoExtractor-prefix.pch */,
+				9613B96EF469431B2C0F8313A8A287E3 /* HCVimeoVideoExtractor-umbrella.h */,
+				DA077C270562BEC7E155996FB85485EB /* HCVimeoVideoExtractor.debug.xcconfig */,
+				33296D8DD5D3BB56DC4FCCDF50C8AD6D /* HCVimeoVideoExtractor.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/HCVimeoVideoExtractor";
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		608C22A06F0569468FCFDB5FFBE2704D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D06C467C3C974EDEFBFE48BBE2389D21 /* HCVimeoVideoExtractor */,
+				4FB27207AE6506B33CF29F2234CB0A03 /* Pods-AppDevAlpha */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		B9C6A1A0ACFC4FAD7F6C2F0271567440 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6F3EAA03D0A401CA0CE6464D99051379 /* HCVimeoVideoExtractor */,
+				409225527C4DCCBF96F5FB1297CF69C5 /* HCVimeoVideoExtractor */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
-			);
-			name = iOS;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -232,62 +154,35 @@
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				B9C6A1A0ACFC4FAD7F6C2F0271567440 /* Pods */,
-				D6089CCAC54C0DCF187F21B9B6790589 /* Products */,
-				8DBD2F2A321AFA3F7D2D579B0F29CCB3 /* Targets Support Files */,
+				608C22A06F0569468FCFDB5FFBE2704D /* Products */,
+				26D8E308D758373072346AF137D3BC49 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
 		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D6089CCAC54C0DCF187F21B9B6790589 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D06C467C3C974EDEFBFE48BBE2389D21 /* HCVimeoVideoExtractor.framework */,
-				4FB27207AE6506B33CF29F2234CB0A03 /* Pods_AppDevAlpha.framework */,
-				C6F946248D27BD7B1C11C9CA0453D2F1 /* Pods_AppDevAlpha_AppDevAlphaUITests.framework */,
-				A9AEC33B50E9F22CD7428148F9C6F7BF /* Pods_AppDevAlphaTests.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		01FED6970B0C3CC687B7AD0A01432122 /* Headers */ = {
+		2C685C754842F1D985A8D3AA26DAD144 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6487DAFD4F4960D83138C398E55584A8 /* Pods-AppDevAlphaTests-umbrella.h in Headers */,
+				3D9C5AF20CF437C1EC8348793B9B53EA /* Pods-AppDevAlpha-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4A41356281CE1075D5552B8683116367 /* Headers */ = {
+		615E4A2D9A47B112CF9E12EECA4FE56E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AAED79190B2B26386A1BFC38D0608C2 /* Pods-AppDevAlpha-AppDevAlphaUITests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		50BE3D30990C4617B6F2AF7A99D06F87 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				59EDEA2ABA52E1FD91EA969D86E0776A /* HCVimeoVideoExtractor-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ABD62F5EC536626C541AC15AC2BA485F /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6989E2DAC4D18F0E0CEE01489272708C /* Pods-AppDevAlpha-umbrella.h in Headers */,
+				EA27890CB0EFC1773DE461BBF5291F59 /* HCVimeoVideoExtractor-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,69 +191,31 @@
 /* Begin PBXNativeTarget section */
 		5706ACF37DA28118FEEB82DFBF949B8C /* Pods-AppDevAlpha */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C091B351A653D932496FF8B034C3C0A3 /* Build configuration list for PBXNativeTarget "Pods-AppDevAlpha" */;
+			buildConfigurationList = FE133129C7707BB8ADB10E013A906497 /* Build configuration list for PBXNativeTarget "Pods-AppDevAlpha" */;
 			buildPhases = (
-				ABD62F5EC536626C541AC15AC2BA485F /* Headers */,
-				0B0FCCAC0B64A79B1637C3B5A2250968 /* Sources */,
-				3844AE598EA9ACBFBC49F6575C3C0BEF /* Frameworks */,
-				B5262F275FDF79AA47F2576FBAF6CC35 /* Resources */,
+				2C685C754842F1D985A8D3AA26DAD144 /* Headers */,
+				AFEB12D048DB7317C69FC991B1F5DD31 /* Sources */,
+				E3E553D2A1142EEA607BCC75534DEDC2 /* Frameworks */,
+				CE9509C2F0EDD99823128DD6DBB19E88 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				EFBDB7C45D5D69C8BE98406CB819716E /* PBXTargetDependency */,
+				B1F2C3FFC1C090A25EF848C078C50C62 /* PBXTargetDependency */,
 			);
 			name = "Pods-AppDevAlpha";
-			productName = "Pods-AppDevAlpha";
-			productReference = 4FB27207AE6506B33CF29F2234CB0A03 /* Pods_AppDevAlpha.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		A85D04F214FDE97A7A590769A0D1E808 /* Pods-AppDevAlphaTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FE445CC2BE3EBCCB7527619556DB0A80 /* Build configuration list for PBXNativeTarget "Pods-AppDevAlphaTests" */;
-			buildPhases = (
-				01FED6970B0C3CC687B7AD0A01432122 /* Headers */,
-				9823EF58143E955BB758D1E9E907FEBA /* Sources */,
-				0B7DC3C3A284A40B9A07BB3A8CAC8B2B /* Frameworks */,
-				99FF68EAC8DD1A905B7F527A344EF038 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				70FBE0DD0DC59C2E558206F4DDB4889D /* PBXTargetDependency */,
-			);
-			name = "Pods-AppDevAlphaTests";
-			productName = "Pods-AppDevAlphaTests";
-			productReference = A9AEC33B50E9F22CD7428148F9C6F7BF /* Pods_AppDevAlphaTests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		C3E2FC2063FB617689BA80529613D534 /* Pods-AppDevAlpha-AppDevAlphaUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 69417742CF2DE8C9367E031948EC4284 /* Build configuration list for PBXNativeTarget "Pods-AppDevAlpha-AppDevAlphaUITests" */;
-			buildPhases = (
-				4A41356281CE1075D5552B8683116367 /* Headers */,
-				08E94FE3CFCBF6ABF9867DFF8231887C /* Sources */,
-				ED18E9A217DF69BBD4B7FFD6BC68CF9E /* Frameworks */,
-				8764CD32E8D90CECCD8AFBFFB8E1ACC5 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				18016948520AEE26B8EC9ADA65EDB707 /* PBXTargetDependency */,
-			);
-			name = "Pods-AppDevAlpha-AppDevAlphaUITests";
-			productName = "Pods-AppDevAlpha-AppDevAlphaUITests";
-			productReference = C6F946248D27BD7B1C11C9CA0453D2F1 /* Pods_AppDevAlpha_AppDevAlphaUITests.framework */;
+			productName = Pods_AppDevAlpha;
+			productReference = 4FB27207AE6506B33CF29F2234CB0A03 /* Pods-AppDevAlpha */;
 			productType = "com.apple.product-type.framework";
 		};
 		E939424EF028FF5B888F986BF865A031 /* HCVimeoVideoExtractor */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00F8CB0460C7C309DF0F5993B235606C /* Build configuration list for PBXNativeTarget "HCVimeoVideoExtractor" */;
+			buildConfigurationList = A0C5D5CE297A4B6919D14539D7A2B553 /* Build configuration list for PBXNativeTarget "HCVimeoVideoExtractor" */;
 			buildPhases = (
-				50BE3D30990C4617B6F2AF7A99D06F87 /* Headers */,
-				7F5CBB8EFA83FA8100B3C29DE3349792 /* Sources */,
-				1C7BFB827BB8671441189C1E74B96B96 /* Frameworks */,
-				A4A452D385201AA248756DE0CC881D5B /* Resources */,
+				615E4A2D9A47B112CF9E12EECA4FE56E /* Headers */,
+				A693DA36417F4A4DDC44802F90CB879E /* Sources */,
+				ACED257F9381C892E6C6385AFF6DA983 /* Frameworks */,
+				4DD420EBAACB1694919A13535C6E668A /* Resources */,
 			);
 			buildRules = (
 			);
@@ -366,7 +223,7 @@
 			);
 			name = HCVimeoVideoExtractor;
 			productName = HCVimeoVideoExtractor;
-			productReference = D06C467C3C974EDEFBFE48BBE2389D21 /* HCVimeoVideoExtractor.framework */;
+			productReference = D06C467C3C974EDEFBFE48BBE2389D21 /* HCVimeoVideoExtractor */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -375,53 +232,37 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = D6089CCAC54C0DCF187F21B9B6790589 /* Products */;
+			productRefGroup = 608C22A06F0569468FCFDB5FFBE2704D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				E939424EF028FF5B888F986BF865A031 /* HCVimeoVideoExtractor */,
 				5706ACF37DA28118FEEB82DFBF949B8C /* Pods-AppDevAlpha */,
-				C3E2FC2063FB617689BA80529613D534 /* Pods-AppDevAlpha-AppDevAlphaUITests */,
-				A85D04F214FDE97A7A590769A0D1E808 /* Pods-AppDevAlphaTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8764CD32E8D90CECCD8AFBFFB8E1ACC5 /* Resources */ = {
+		4DD420EBAACB1694919A13535C6E668A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		99FF68EAC8DD1A905B7F527A344EF038 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A4A452D385201AA248756DE0CC881D5B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B5262F275FDF79AA47F2576FBAF6CC35 /* Resources */ = {
+		CE9509C2F0EDD99823128DD6DBB19E88 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -431,71 +272,40 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		08E94FE3CFCBF6ABF9867DFF8231887C /* Sources */ = {
+		A693DA36417F4A4DDC44802F90CB879E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D66BE529F69D3C74CFE49AFC9C1AF031 /* Pods-AppDevAlpha-AppDevAlphaUITests-dummy.m in Sources */,
+				BB5D627AB86BF2C2CE46F3BEE1C85974 /* HCVimeoVideo.swift in Sources */,
+				162CADE0982500D4D98BF1B990A96014 /* HCVimeoVideoExtractor.swift in Sources */,
+				F7219773DEC841419DAF3A142EFDE173 /* HCVimeoVideoExtractor-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0B0FCCAC0B64A79B1637C3B5A2250968 /* Sources */ = {
+		AFEB12D048DB7317C69FC991B1F5DD31 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C24A601FF1C6DA829CD22BC47D2588E /* Pods-AppDevAlpha-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7F5CBB8EFA83FA8100B3C29DE3349792 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DC544AF6ED65B495989AED4D88763D5D /* HCVimeoVideo.swift in Sources */,
-				B58DF731C73539435D7A351820C2A1C0 /* HCVimeoVideoExtractor-dummy.m in Sources */,
-				24D3D9FCBC683F45FF4A40C93C912A68 /* HCVimeoVideoExtractor.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9823EF58143E955BB758D1E9E907FEBA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FE8BB97D0798983AA653816E4445B91B /* Pods-AppDevAlphaTests-dummy.m in Sources */,
+				2D0C5CC67C9A34AD88AB88DC8515445A /* Pods-AppDevAlpha-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		18016948520AEE26B8EC9ADA65EDB707 /* PBXTargetDependency */ = {
+		B1F2C3FFC1C090A25EF848C078C50C62 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = HCVimeoVideoExtractor;
 			target = E939424EF028FF5B888F986BF865A031 /* HCVimeoVideoExtractor */;
-			targetProxy = C6DAD50E70C5775AE9A0C3EB282E2EBA /* PBXContainerItemProxy */;
-		};
-		70FBE0DD0DC59C2E558206F4DDB4889D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-AppDevAlpha";
-			target = 5706ACF37DA28118FEEB82DFBF949B8C /* Pods-AppDevAlpha */;
-			targetProxy = 681324AF1785199F4906602983585D6D /* PBXContainerItemProxy */;
-		};
-		EFBDB7C45D5D69C8BE98406CB819716E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = HCVimeoVideoExtractor;
-			target = E939424EF028FF5B888F986BF865A031 /* HCVimeoVideoExtractor */;
-			targetProxy = 3DD91C007A62FB2676073495DF28E083 /* PBXContainerItemProxy */;
+			targetProxy = D4074EC6CF23B817D852A0DC2FDC6086 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0A4A7B21C898C2A1003D677F6040CFEB /* Debug */ = {
+		0D05ED1718CC15913E47E0884299520B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D8298754BDB759B5DFC565E7B08F14A6 /* Pods-AppDevAlphaTests.debug.xcconfig */;
+			baseConfigurationReference = DA077C270562BEC7E155996FB85485EB /* HCVimeoVideoExtractor.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -504,7 +314,78 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-AppDevAlphaTests/Pods-AppDevAlphaTests-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/HCVimeoVideoExtractor/HCVimeoVideoExtractor-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/HCVimeoVideoExtractor/HCVimeoVideoExtractor-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/HCVimeoVideoExtractor/HCVimeoVideoExtractor.modulemap";
+				PRODUCT_MODULE_NAME = HCVimeoVideoExtractor;
+				PRODUCT_NAME = HCVimeoVideoExtractor;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0EB61BB9BE084A4AA92892F99B4C0F54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33296D8DD5D3BB56DC4FCCDF50C8AD6D /* HCVimeoVideoExtractor.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/HCVimeoVideoExtractor/HCVimeoVideoExtractor-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/HCVimeoVideoExtractor/HCVimeoVideoExtractor-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/HCVimeoVideoExtractor/HCVimeoVideoExtractor.modulemap";
+				PRODUCT_MODULE_NAME = HCVimeoVideoExtractor;
+				PRODUCT_NAME = HCVimeoVideoExtractor;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		27AA348F73A8754E9846295C02353FC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DCE92BE3B28E9F7C002644CD151F4B55 /* Pods-AppDevAlpha.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-AppDevAlpha/Pods-AppDevAlpha-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -513,7 +394,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-AppDevAlphaTests/Pods-AppDevAlphaTests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-AppDevAlpha/Pods-AppDevAlpha.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -522,15 +403,17 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		204B8AEA4AE90A551A1768B355C2F9F0 /* Debug */ = {
+		2F8F5A10E41E53360D98263F292D94D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -553,6 +436,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -591,84 +475,11 @@
 			};
 			name = Debug;
 		};
-		28951B6B38D3233FF1CF6ED445F31657 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 342DC9BE48A8AFEB53EEA87645073BE2 /* HCVimeoVideoExtractor.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/HCVimeoVideoExtractor/HCVimeoVideoExtractor-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/HCVimeoVideoExtractor/HCVimeoVideoExtractor-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/HCVimeoVideoExtractor/HCVimeoVideoExtractor.modulemap";
-				PRODUCT_MODULE_NAME = HCVimeoVideoExtractor;
-				PRODUCT_NAME = HCVimeoVideoExtractor;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		3C11AC72CDA24B6995E34ABCCF247FC7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BCC20EC9CE85F3BB29FDD34DC7DBC177 /* Pods-AppDevAlpha-AppDevAlphaUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-AppDevAlpha-AppDevAlphaUITests/Pods-AppDevAlpha-AppDevAlphaUITests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-AppDevAlpha-AppDevAlphaUITests/Pods-AppDevAlpha-AppDevAlphaUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		3CCC6195EDBEE5DA2A49DF962113BE16 /* Release */ = {
+		4F9AE7FB4ACAB7722C091E1EFA9FF12A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -691,6 +502,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -725,126 +537,12 @@
 			};
 			name = Release;
 		};
-		4A69CEB76178D7B42239712BDDDB3014 /* Release */ = {
+		553A959E7E786D4E5352B601129DBA13 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9B37AC3F978BE2AD493F06EF26E26C35 /* Pods-AppDevAlphaTests.release.xcconfig */;
+			baseConfigurationReference = F3AB52118948EF43250E937725070A37 /* Pods-AppDevAlpha.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-AppDevAlphaTests/Pods-AppDevAlphaTests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-AppDevAlphaTests/Pods-AppDevAlphaTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		B28C5CB24EBFF22DFE6CFDC83E1B1B79 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6135C081900C0EC6BB59B19CDAC02ADA /* Pods-AppDevAlpha-AppDevAlphaUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-AppDevAlpha-AppDevAlphaUITests/Pods-AppDevAlpha-AppDevAlphaUITests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-AppDevAlpha-AppDevAlphaUITests/Pods-AppDevAlpha-AppDevAlphaUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		CD54A8DDEA8C84064A27CCC79BCDC171 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 342DC9BE48A8AFEB53EEA87645073BE2 /* HCVimeoVideoExtractor.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/HCVimeoVideoExtractor/HCVimeoVideoExtractor-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/HCVimeoVideoExtractor/HCVimeoVideoExtractor-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/HCVimeoVideoExtractor/HCVimeoVideoExtractor.modulemap";
-				PRODUCT_MODULE_NAME = HCVimeoVideoExtractor;
-				PRODUCT_NAME = HCVimeoVideoExtractor;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		D3533C2DD93976FC170C4BA10C065DA4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 426DB6CD162DDC5EA107030A2C052ECE /* Pods-AppDevAlpha.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -875,90 +573,33 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		EEE9D04AA04877E4D6FD79DD8CF60375 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 235506D369EEB89111AE5B5F89DE6DE0 /* Pods-AppDevAlpha.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-AppDevAlpha/Pods-AppDevAlpha-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-AppDevAlpha/Pods-AppDevAlpha.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00F8CB0460C7C309DF0F5993B235606C /* Build configuration list for PBXNativeTarget "HCVimeoVideoExtractor" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CD54A8DDEA8C84064A27CCC79BCDC171 /* Debug */,
-				28951B6B38D3233FF1CF6ED445F31657 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				204B8AEA4AE90A551A1768B355C2F9F0 /* Debug */,
-				3CCC6195EDBEE5DA2A49DF962113BE16 /* Release */,
+				2F8F5A10E41E53360D98263F292D94D1 /* Debug */,
+				4F9AE7FB4ACAB7722C091E1EFA9FF12A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		69417742CF2DE8C9367E031948EC4284 /* Build configuration list for PBXNativeTarget "Pods-AppDevAlpha-AppDevAlphaUITests" */ = {
+		A0C5D5CE297A4B6919D14539D7A2B553 /* Build configuration list for PBXNativeTarget "HCVimeoVideoExtractor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3C11AC72CDA24B6995E34ABCCF247FC7 /* Debug */,
-				B28C5CB24EBFF22DFE6CFDC83E1B1B79 /* Release */,
+				0D05ED1718CC15913E47E0884299520B /* Debug */,
+				0EB61BB9BE084A4AA92892F99B4C0F54 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C091B351A653D932496FF8B034C3C0A3 /* Build configuration list for PBXNativeTarget "Pods-AppDevAlpha" */ = {
+		FE133129C7707BB8ADB10E013A906497 /* Build configuration list for PBXNativeTarget "Pods-AppDevAlpha" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D3533C2DD93976FC170C4BA10C065DA4 /* Debug */,
-				EEE9D04AA04877E4D6FD79DD8CF60375 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FE445CC2BE3EBCCB7527619556DB0A80 /* Build configuration list for PBXNativeTarget "Pods-AppDevAlphaTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0A4A7B21C898C2A1003D677F6040CFEB /* Debug */,
-				4A69CEB76178D7B42239712BDDDB3014 /* Release */,
+				553A959E7E786D4E5352B601129DBA13 /* Debug */,
+				27AA348F73A8754E9846295C02353FC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

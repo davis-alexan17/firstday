@@ -8,13 +8,13 @@ target 'AppDevAlpha' do
 
   # Pods for AppDevAlpha
 
-  target 'AppDevAlphaTests' do
-    inherit! :search_paths
+ # target 'AppDevAlphaTests' do
+  #  inherit! :search_paths
     # Pods for testing
-  end
+#  end
 
-  target 'AppDevAlphaUITests' do
+#  target 'AppDevAlphaUITests' do
     # Pods for testing
-  end
+#  end
 
 end

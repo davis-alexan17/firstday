@@ -60,18 +60,26 @@
                                     <outlet property="delegate" destination="6f7-VN-ix1" id="yDv-tT-dkN"/>
                                 </connections>
                             </collectionView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zf4-4i-Uzt">
+                                <rect key="frame" x="294" y="596" width="322" height="214"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="G40-dt-TxF" kind="embed" id="6oO-aW-mzr"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4X5-TT-x6H"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <connections>
+                        <outlet property="AvPlayerViewController" destination="zf4-4i-Uzt" id="bJs-2L-t2H"/>
                         <outlet property="collectionView" destination="BuQ-MZ-7C7" id="WdG-VA-RAG"/>
                         <segue destination="5Lb-YX-Z3t" kind="show" identifier="toCategories" id="iL5-CQ-I5a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bbe-xv-KSm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2655.46875" y="1135.9375"/>
+            <point key="canvasLocation" x="-2655.5555555555557" y="1135.5555555555554"/>
         </scene>
         <!--Category View Controller-->
         <scene sceneID="DtD-eL-jC6">
@@ -300,8 +308,16 @@
             </objects>
             <point key="canvasLocation" x="-1858.8888888888889" y="1871.8518518518517"/>
         </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="dA5-DO-2p6">
+            <objects>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="G40-dt-TxF" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TPr-Bf-ckg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2621" y="541"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="1fW-Sp-XSW"/>
+        <segue reference="m4b-L9-aia"/>
     </inferredMetricsTieBreakers>
 </document>
