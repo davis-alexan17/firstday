@@ -4,12 +4,11 @@ from flask import Flask, render_template, request, redirect, g, url_for, flash, 
 from functools import wraps
 from werkzeug.utils import secure_filename
 import datetime
+from dotenv import load_dotenv
 # ENV VARIABLES +
 #Second category added when updating spanish name from nothing, without updating english name initially
-
-
-DB_URI_TEMP = 'sqlite:///../test.db' if os.environ.get('LOCAL_TEST') is not None else 'mysql+pymysql://db:appdevalpha@database-1.ciojjmshxrtc.us-east-1.rds.amazonaws.com:3306/ebdb'
-
+load_dotenv()
+DB_URI_TEMP = 'sqlite:///../ebdb.db' if os.getenv("LOCAL_TEST", 'False').lower() in ('true', '1', 't') else f"mysql+pymysql://{os.getenv('USER')}:{os.getenv('PASS')}@{os.getenv('DB_URL')}/{os.getenv('DB_NAME')}"
 # CREATE APP
 
 application = app = Flask(__name__)
@@ -17,9 +16,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = DB_URI_TEMP
 app.config['SECRET_KEY'] = 'h'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-
-
-UPLOAD_FOLDER = join(dirname(realpath(__file__)), 'uploads')
+UPLOAD_FOLDER = join(dirname(realpath(__file__)), 'uploads')#if os.getenv('LOCAL_TEST') is not None else '/efs/uploads'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -34,7 +31,7 @@ db.init_app(app)
 
 #==========================================================DB Formation above
 
-@app.cli.command('json')
+@app.cli.command('json')  
 def test_json():
     school_id = School.query.first().id
     print(get_schools())
@@ -44,7 +41,6 @@ def test_json():
 @click.argument('name')
 def create_school(name):
     new_school = School(name=name, hidden=False)
-    # ask someone at dts about sso
     code = rand()
     auth = AuthManager(code=code, school_id=new_school.id)
     new_school.auth = auth
@@ -126,7 +122,8 @@ def allowed_file(filename):
 @app.route("/geticon/<path>", methods=("GET",))
 @login_required
 def get_icon(path):
-    return send_from_directory(app.config['UPLOAD_FOLDER'], path)
+    #return send_from_directory(app.config['UPLOAD_FOLDER'], path)
+    return send_from_directory("./static", path)
 
 @app.route("/getimg/<table>/<id>", methods=("GET",))
 @login_required
@@ -269,7 +266,7 @@ def school():
             flash("Form not filled out")
             return redirect(url_for('school'))
 
-        # Extract data from request.form
+        # Extract data from request.form -- !!!! Can change to just c_name_eng = request.form["name_eng"] but idk if it will give an error instead of a none if the object is not in request.form
         if "name_eng" in request.form:
             c_name_eng = request.form["name_eng"]
         else:
@@ -470,7 +467,7 @@ def manage_category(category_id):
 #================================FLASK HTML INTERACTION ABOVE
 
 
-@app.route('/get_json/schools', methods=('GET', 'POST'))
+@app.route('/get_json/schools', methods=('GET',))
 def get_json():
     return get_schools()
 #============================================================JSON
