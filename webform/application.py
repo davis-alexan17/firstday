@@ -4,11 +4,11 @@ from flask import Flask, render_template, request, redirect, g, url_for, flash, 
 from functools import wraps
 from werkzeug.utils import secure_filename
 import datetime
-from dotenv import load_dotenv
+from dotenv import dotenv_values
 # ENV VARIABLES +
 #Second category added when updating spanish name from nothing, without updating english name initially
-load_dotenv()
-DB_URI_TEMP = 'sqlite:///../ebdb.db' if os.getenv("LOCAL_TEST", 'False').lower() in ('true', '1', 't') else f"mysql+pymysql://{os.getenv('USER')}:{os.getenv('PASS')}@{os.getenv('DB_URL')}/{os.getenv('DB_NAME')}"
+config=dotenv_values("config.env")
+DB_URI_TEMP = 'sqlite:///../ebdb.db' if config["LOCAL_TEST"].lower() in ('true', '1', 't') else f"mysql+pymysql://{config['USER']}:{config['PASS']}@{config['DB_URL']}/{config['DB_NAME']}"
 # CREATE APP
 
 application = app = Flask(__name__)
@@ -128,7 +128,6 @@ def get_icon(path):
 @app.route("/getimg/<table>/<id>", methods=("GET",))
 @login_required
 def get_img(table, id):
-
     # gets current school img, sends image
     if table == "schools":
         if g.school.imgPath is not None:
@@ -137,14 +136,10 @@ def get_img(table, id):
             return None
     #gets first category img path
     elif table == "categories":
-        
         category = Category.query.filter_by(school_id=g.school.id, id=id).first()
-        print(category)
-        print(g.school.id)
-        print(id)
         if category.imgPath is None:
             return None
-        return send_from_directory(app.config["UPLOAD_FOLDER"], category.imgPath)
+        return send_from_directory("static", category.imgPath)
     #gets profile image path
     elif table == "profiles":
         if 'category_id' not in session:
@@ -161,20 +156,23 @@ def getImagePath(table, id):
     if table == "schools":
         q = School.query.filter_by(id=id).first()
         img_path = q.imgPath if q is not None else ""
+        return send_from_directory(app.config['UPLOAD_FOLDER'], img_path)
     #Returns img path
     elif table == "categories":
         q = Category.query.filter_by(id=id).first()
         img_path = q.imgPath if q is not None else ""
+        return send_from_directory("static", img_path)
     #Returns img path
     elif table == "profiles":
         q = Profile.query.filter_by(id=id).first()
         img_path = q.imgPath if q is not None else ""
+        return send_from_directory(app.config['UPLOAD_FOLDER'], img_path)
     else:
         return None
-    if img_path is None:
-        return "no_image"
-    return send_from_directory(app.config['UPLOAD_FOLDER'], img_path)
 
+    #if img_path is None:
+    #    return "no_image"
+    
 # returns JSON of category 
 
 @app.route("/category_data/<id>", methods=('GET',))
@@ -469,5 +467,5 @@ def manage_category(category_id):
 
 @app.route('/get_json/schools', methods=('GET',))
 def get_json():
-    return get_schools()
+    return jsonify(get_schools())
 #============================================================JSON

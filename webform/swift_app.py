@@ -21,5 +21,5 @@ def get_profiles(category_id):
     profiles = Profile.query.filter_by(category_id=category_id, hidden=False).all()
     json = []
     for profile in profiles:
-        json.append({"name_eng": profile.name_eng, "name_esp": profile.name_esp, "text_eng": profile.text_eng, "text_esp": profile.text_esp, "imgKey": profile.imgPath, "id": profile.id})
+        json.append({"name_eng": profile.name_eng, "name_esp": profile.name_esp, "text_eng": profile.text_eng, "text_esp": profile.text_esp, "imgKey": profile.imgPath, "id": profile.id, "vimeoLink": profile.vimeoLink})
     return json
