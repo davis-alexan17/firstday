@@ -22,6 +22,7 @@
 		F4B10AFB233430AF00890FAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4B10AF9233430AF00890FAC /* LaunchScreen.storyboard */; };
 		F4B158E32405DE4400D1E728 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4B158E62405DE4400D1E728 /* Localizable.strings */; };
 		F4B841A923DA4E7100A8C689 /* SamplePersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B841A823DA4E7100A8C689 /* SamplePersonViewController.swift */; };
+		FA51B209285988270013BE9C /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA51B208285988270013BE9C /* Slide.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		F4B841A823DA4E7100A8C689 /* SamplePersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplePersonViewController.swift; sourceTree = "<group>"; };
 		F4B841AA23DA536200A8C689 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		F4B841AB23DA536200A8C689 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FA51B208285988270013BE9C /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 		F4B10AEF233430AD00890FAC /* AppDevAlpha */ = {
 			isa = PBXGroup;
 			children = (
+				FA51B208285988270013BE9C /* Slide.xib */,
 				F4B10AF0233430AD00890FAC /* AppDelegate.swift */,
 				CEA972FC23B2ABB100309B2D /* SchoolStruct.swift */,
 				63415A4B2517FE0B0085836B /* ViewControllers */,
@@ -179,7 +182,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1340;
 				ORGANIZATIONNAME = "Innovation Center";
 				TargetAttributes = {
 					F4B10AEC233430AD00890FAC = {
@@ -211,6 +214,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA51B209285988270013BE9C /* Slide.xib in Resources */,
 				F4B10AFB233430AF00890FAC /* LaunchScreen.storyboard in Resources */,
 				F4B158E32405DE4400D1E728 /* Localizable.strings in Resources */,
 				F4B10AF8233430AF00890FAC /* assets.xcassets in Resources */,
@@ -340,6 +344,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -402,6 +407,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

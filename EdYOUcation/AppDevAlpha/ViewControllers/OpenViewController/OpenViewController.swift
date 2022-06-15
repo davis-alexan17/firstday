@@ -13,7 +13,6 @@ import AVFoundation
 class OpenViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate  {
     var schools: [String] = []
 
-    @IBOutlet weak var AvPlayerViewController: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -29,40 +28,10 @@ class OpenViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         super.viewDidLoad()
         
-        let url = URL(string: "https://vimeo.com/663068298")!
-        vimeo(url: url)
-    }
-    
-    func vimeo (url: URL) {
-        HCVimeoVideoExtractor.fetchVideoURLFrom(url: url, completion: { ( video:HCVimeoVideo?, error:Error?) -> Void in
-            if let err = error {
-                print("Error = \(err.localizedDescription)")
-                return
-            }
-            
-            guard let vid = video else {
-                print("Invalid video object")
-                return
-            }
-            
-            print("Title = \(vid.title), url = \(vid.videoURL), thumbnail = \(vid.thumbnailURL)")
-            if let videoURL = vid.videoURL[.Quality1080p] {
-
-               let player = AVPlayer(url: videoURL)
-
-               DispatchQueue.main.async {
-                   let playerController = AVPlayerViewController()
-                   playerController.player = player
-                   self.present(playerController, animated: true) {
-                       player.play()
-                   }
-               }
-           } else {
-               print("Error: videoURL not found")
-           }
-        })
         
     }
+    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print(schools, schools.count)
         return schools.count

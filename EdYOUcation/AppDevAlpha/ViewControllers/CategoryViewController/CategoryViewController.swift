@@ -62,7 +62,7 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
             if let destination = segue.destination as? ListViewController {
                 destination.data = categories[index].profiles
                 let t = categories[index]
-                let tempProfile = Profile(id: t.id, name_eng: t.name_eng, name_esp: t.name_esp, text_eng: t.text_eng, text_esp: t.text_esp, imgKey: t.imgKey)
+                let tempProfile = Profile(id: t.id, name_eng: t.name_eng, name_esp: t.name_esp, text_eng: t.text_eng, text_esp: t.text_esp, imgKey: t.imgKey, vimeoLink: "")
                 
                 destination.cat = tempProfile
             }
@@ -71,7 +71,7 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
         if segue.identifier == "toItem" {
             if let destination = segue.destination as? ItemViewController {
                 let t = categories[index]
-                let tempProfile = Profile(id: t.id, name_eng: t.name_eng, name_esp: t.name_esp, text_eng: t.text_eng, text_esp: t.text_esp, imgKey: t.imgKey)
+                let tempProfile = Profile(id: t.id, name_eng: t.name_eng, name_esp: t.name_esp, text_eng: t.text_eng, text_esp: t.text_esp, imgKey: t.imgKey, vimeoLink: "")
                 
                 destination.data = tempProfile
             }

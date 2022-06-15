@@ -105,6 +105,7 @@ struct Profile: Codable {
     let text_eng: String?
     let text_esp: String?
     let imgKey: String?
+    let vimeoLink: String?
     
     func name() -> String {
         if (Schools_Controller.espanol) {
@@ -152,7 +153,7 @@ struct config {
 
 class Schools_Controller {
     // set to "es" or "en" for testing
-    static var espanol = (NSLocale.current.languageCode == "en")
+    static var espanol = (NSLocale.current.languageCode == "es")
      
     static var schools: [String:School_Data] = [:]
     
@@ -245,7 +246,6 @@ class Schools_Controller {
      */
     static func saveImgData(school_: School_Data) {
         do {
-            print(Locale.current.languageCode)
             if school_.id != 0 && school_.imgKey != nil && school_.imgKey != "None" {
                 let data = try? Data(contentsOf: URL(string: school_.img_url())!)
                 print("\n\n\nDEBUG:\n\n\n", school_.img_url())
