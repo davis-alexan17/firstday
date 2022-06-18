@@ -30,6 +30,12 @@ from swift_app import get_schools
 db.init_app(app)
 
 #==========================================================DB Formation above
+@app.cli.command('schools')
+def school_codes():
+    auths = AuthManager.query.all()
+    for row in auths:
+        print(School.query.filter_by(id=row.id).first().name, row.code)
+
 
 @app.cli.command('json')  
 def test_json():
