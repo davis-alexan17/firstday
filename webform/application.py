@@ -82,10 +82,9 @@ def list_command():
 def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
-        if g.school is None:
-            return redirect(url_for('index'), next=request.url)
+        if not hasattr(g, 'school') or g.school is None:
+            return redirect(url_for('index'))#NOT SURE WHAT THIS DOES ->>, next=request.url)
         return f(*args, **kwargs)
-
     return decorated_function
 
 # Sets g.school based on inputted code
@@ -129,7 +128,7 @@ def allowed_file(filename):
 @login_required
 def get_icon(path):
     #return send_from_directory(app.config['UPLOAD_FOLDER'], path)
-    return send_from_directory("./static", path)
+    return send_from_directory("static", path)
 
 @app.route("/getimg/<table>/<id>", methods=("GET",))
 @login_required
@@ -175,7 +174,7 @@ def getImagePath(table, id):
         return send_from_directory(app.config['UPLOAD_FOLDER'], img_path)
     else:
         return None
-
+    #Might cause an image issue. Make sure to test.
     #if img_path is None:
     #    return "no_image"
     
@@ -466,8 +465,6 @@ def manage_category(category_id):
                            category_name=(category.name_eng if category.name_eng is not None
                                           else category.name_esp),
                            profiles=category.profiles, time=datetime.datetime.now().second)
-
-
 #================================FLASK HTML INTERACTION ABOVE
 
 
