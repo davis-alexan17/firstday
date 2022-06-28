@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+{% block body %}
+<div>
+    <br>
+    <h1>{{ g.school.name }}</h1>
+    <br>
+    <br>
+    {% if edit_category is not none  %}
+        <h4>{{ edit_category.name }}</h4>
+
+        {% if edit_profile is not none  %}
+            <h3>Profile: {{ edit_profile.name }}</h3>
+            <form method="post">
+            </form>
+        {% else %}
+            {% if edit_category.profiles is not none and edit_category.profiles|count > 0 %}
+            <h3>Select profile to edit</h3>
+            <form method="post">
+                <select class="form-control">
+                    {% for profile in edit_category.profiles %}
+                  <option name="{{ profile.name }}">{{ profile.name }}</option>
+                    {% endfor %}
+                </select>
+                <input type="submit" value="Edit profile">
+            </form>
+            {% else %}
+            <h4>No profiles</h4>
+            {% endif %}
+            <br>
+            <br>
+            <br>
+            <h4>Add a profile</h4>
+            <br>
+            <form method="post">
+              <div class="form-group">
+                <input type="text" style="display:none" name="edit_category" value="{{ edit_category.name }}">
+                <label for="name">Name/Title</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter name/title" name="new_profile_name">
+              </div>
+               <div class="form-group">
+                <label for="textArea">Text</label>
+                <textarea class="form-control" id="textArea" rows="3" name="text"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Add profile</button>
+            </form>
+        {% endif %}
+
+
+    {% else %}
+        {% if categories is not none and categories|count > 0 %}
+            <form method="post">
+                <select name="selected_category" class="form-control">
+                    {% for category in categories %}
+                  <option>{{ category.name }}</option>
+                    {% endfor %}
+                </select>
+                <input type="submit" value="Edit category">
+            </form>
+        {% else %}
+            <h5>No categories have been added yet!</h5>
+        {% endif %}
+            <br>
+            <br>
+            <h6>Add category:</h6>
+            <form method="post">
+                <input type="text" placeholder="Category Name" name="new_category_name">
+                <input type="submit" value="Add Category">
+            </form>
+    {% endif %}
+
+</div>
+{% endblock %}
