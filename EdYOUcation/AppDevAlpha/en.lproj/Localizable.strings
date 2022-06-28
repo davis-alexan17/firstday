@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  AppDevAlpha
+
+  Created by Paul Hollingshead on 2/25/20.
+  Copyright © 2020 Innovation Center. All rights reserved.
+*/
+"Mr" = "Mr";
+"jrobinson" = "Mr. Robinson is a good dude.";
