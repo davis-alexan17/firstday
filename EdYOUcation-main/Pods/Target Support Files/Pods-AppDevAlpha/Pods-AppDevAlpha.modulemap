@@ -1,6 +1,0 @@
-framework module Pods_AppDevAlpha {
-  umbrella header "Pods-AppDevAlpha-umbrella.h"
-
-  export *
-  module * { export * }
-}
