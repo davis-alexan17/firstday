@@ -5,12 +5,15 @@ from functools import wraps
 from werkzeug.utils import secure_filename
 import datetime
 from dotenv import dotenv_values
+import logging
+#from onelogin.saml2.auth import OneLogin_Saml2_Auth
+#from onelogin.saml2.utils import OneLogin_Saml2_Utils
 # ENV VARIABLES +
 #Second category added when updating spanish name from nothing, without updating english name initially
 config=dotenv_values("config.env")
-DB_URI_TEMP = 'sqlite:///../ebdb.db' if config["LOCAL_TEST"].lower() in ('true', '1', 't') else f"mysql+pymysql://{config['USER']}:{config['PASS']}@{config['DB_URL']}/{config['DB_NAME']}"
+localTest= config["LOCAL_TEST"].lower() in ('true', '1', 't')
+DB_URI_TEMP = 'sqlite:///../ebdb.db' if localTest else f"mysql+pymysql://{config['USER']}:{config['PASS']}@{config['DB_URL']}/{config['DB_NAME']}"
 # CREATE APP
-
 application = app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = DB_URI_TEMP
 app.config['SECRET_KEY'] = 'h'
@@ -30,24 +33,57 @@ from swift_app import get_schools
 db.init_app(app)
 
 #==========================================================DB Formation above
-@app.cli.command('schools')
+@app.cli.command('list')
 def school_codes():
     auths = AuthManager.query.all()
     for row in auths:
         print(School.query.filter_by(id=row.id).first().name, row.code)
 
+@app.cli.command('remove')
+@click.argument('code')
+def school_codes(code):
+    auths = [row.code for row in AuthManager.query.all()]
+    if code in auths:
+        auth_entry = AuthManager.query.filter_by(code=code).first()
+        school_delete = School.query.filter_by(id=auth_entry.school_id).first()
+        for category in school_delete.categories:
+            for prof in category.profiles:
+                if prof.imgPath is not None:
+                    os.remove(os.path.join(app.config['UPLOAD_FOLDER'], prof.imgPath))
+        db.session.delete(school_delete)
+        db.session.commit()
+    else:
+        print("There are no schools matching that code")
+    """
+    auths = [row.code for row in AuthManager.query.all()]
+    if code in auths:
+        auth_entry = AuthManager.query.filter_by(code=code).first()
+        school = School.query.filter_by(id=auth_entry.school_id).first()
+        categories = Category.query.filter_by(school_id=auth_entry.school_id).all()
+        for category in categories:
+            for profile in Profile.query.filter_by(category_id=category.id).all():
+                db.session.delete(profile)
+            db.session.delete(category)
+        db.session.delete(school)
+        db.session.delete(auth_entry)
+        db.session.commit()
+        print("School removed")
+    else:
+        print("There are no schools matching that code")
+    """
 
 @app.cli.command('json')  
 def test_json():
     school_id = School.query.first().id
     print(get_schools())
 
-
 @app.cli.command('create')
 @click.argument('name')
 def create_school(name):
     new_school = School(name=name, hidden=False)
     code = rand()
+    while code in [int(row.code) for row in AuthManager.query.all()]:
+        code = rand()
     auth = AuthManager(code=code, school_id=new_school.id)
     new_school.auth = auth
     db.session.add(auth)
@@ -68,7 +104,7 @@ def test_command():
     print('db initiated')
 
 
-@app.cli.command('list')
+@app.cli.command('schools')
 def list_command():
     schools = School.query.all()
     [print(school.name, school.id, school.categories) for school in schools]
@@ -78,12 +114,17 @@ def list_command():
 #===================================================================DB commands above
 
 # Requires g.school to be set before doing certain actions, acessible with the @login_required wrapper
-
 def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
-        if not hasattr(g, 'school') or g.school is None:
-            return redirect(url_for('index'))#NOT SURE WHAT THIS DOES ->>, next=request.url)
+        try:
+            if session['user'] != hash("test") or session['pass'] != hash("test"):
+                return redirect(url_for('login'))
+            #if not hasattr(g, 'school') or g.school is None:
+            #    return redirect(url_for('login', next=request.url))
+        except Exception as e: 
+            print(e)
+            return redirect(url_for('login'))
         return f(*args, **kwargs)
     return decorated_function
 
@@ -98,11 +139,26 @@ def load_school():
         redirect(index)
 
 # Creates login page, if you have a GET request to load the page normally it loads index.html. If you send a POST request through the school number form if correct it sets the school id in session storage if wrong redirect
-
+@app.route("/login", methods=("GET", "POST"))
+def login():
+    if request.method == "POST":
+        if request.form['username'] is not None and request.form['password'] is not None:
+            session['user'] = hash(request.form['username'])
+            session['pass'] = hash(request.form['password'])
+            #flash("Incorrect Login")
+            return redirect(url_for('index'))
+        else:
+            return redirect(url_for('login'))
+    else:
+        g.school = None
+        return render_template("login.html", sign=False)
+        
 @app.route("/", methods=("GET", "POST"))
+@login_required
 def index():
     if request.method == "GET":
-        return render_template("index.html")
+        g.school = None
+        return render_template("index.html", auths=AuthManager.query.all(), School=School)
     else:
         y = request.form['code']
         s = AuthManager.query.filter_by(code=y).first()
@@ -121,7 +177,13 @@ def allowed_file(filename):
 
 # gets any filename in upload folder given file path
 
-
+#Logout function--can move to html
+@app.route("/logout", methods=("GET",))
+@login_required
+def logout():
+    del session["user"]
+    del session["pass"]
+    return redirect(url_for('login'))
 # Could be more secure. Not important
 
 @app.route("/geticon/<path>", methods=("GET",))

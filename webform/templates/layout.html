@@ -1,10 +1,12 @@
 <!doctype html>
 <head>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
   <title>EdYOUcation</title>
   <style>
@@ -90,6 +92,18 @@
     <h1 style="float: left; display: inline-block; margin-left: 20px; margin-right: 20px; margin-top: 55.5px; color: maroon">EdYOUcation</h1>
     <div id="divider"> </div>
     <img style="float: left; display: inline-block;" src="../static/logo.jpeg" height="150px" width="150px">
+    <div style="display: block; float: right;">
+    {% if g.school %}
+    <form action="/" >
+      <input type="submit" class="btn btn-primary" value="Switch school" style="margin: 15px; background-color: maroon; border: none; float: right;" />
+  </form>
+  {% endif %}
+  {% if sign != False %}
+  <form action="/logout" >
+    <input type="submit" class="btn btn-primary" value="Logout" style="margin: 15px; background-color: maroon; border: none; float: right;" />
+</form>
+{% endif %}
+</div>
   </div>
   {% block body %}{% endblock %}
 </div>

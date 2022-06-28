@@ -1,14 +1,30 @@
-{% extends "layout.html" %}
+{% extends "layout.html" %}   
 {% block body %}
-    <form method="post" >
-      <div class="form-group">
-        <label for="school_id">Enter the code associated with the school you wish to edit.</label>
-<!--        <div style="font-size: small">If you don't know the id, send an email here...:</div>-->
-        <br>
-        <input type="text" class="form-control" id="school_id" aria-describedby="emailHelp" placeholder="School code" name="code">
-        <small class="form-text text-muted">If you don't have the code, send an email here...</small>
-        <br>
-      <input type="submit" style="width: 90px" class="btn btn-outline-dark btn-sm" value="Go"/>
-      </div>
-    </form>
+<script>
+    $(document).ready(function() {
+    $('#school').select2({
+      placeholder: "School",
+    allowClear: true
+});
+    $("#school").on('select2:select', function (e) {
+    $("#school_id").val(e.params.data.id)
+    $('#school-search').submit();
+    
+});
+    })
+</script>
+<div class="form-group">
+<label for="school">Please select a school</label>
+<br>
+<select class="js-example-basic-single js-states form-control" id="school" style="width: element;" name="code">
+  <option></option>
+  {% for row in auths %}
+  <option value="{{ row.code }}">{{ School.query.filter_by(id=row.id).first().name }}</option>
+  {% endfor %}
+  </select>
+</br>
+<form method="post" id="school-search">
+  <input type="text" class="form-control" id="school_id"  name="code" hidden>
+</form>
+</div>
 {% endblock %}
