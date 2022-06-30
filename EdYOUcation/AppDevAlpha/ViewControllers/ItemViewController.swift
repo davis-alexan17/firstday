@@ -80,6 +80,7 @@ class ItemViewController: UIViewController, UIScrollViewDelegate{
                 }
                 
                 print("Title = \(vid.title), url = \(vid.videoURL), thumbnail = \(vid.thumbnailURL)")
+                //set up to detect resolutions
                 if let videoURL = vid.videoURL[.Quality360p] {
                     player = AVPlayer(url: videoURL)
                     DispatchQueue.main.async { [self] in
