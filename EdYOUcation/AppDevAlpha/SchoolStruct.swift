@@ -139,9 +139,7 @@ struct config {
     
     struct api {
         static let local_test = ""
-        static let base_url = "http://edyoucation-env.eba-zqhauuja.us-east-1.elasticbeanstalk.com"//"http://127.0.0.1:5000"
-        
-        //"http://127.0.0.1:5000"
+        static let base_url = "https://firstday.svvsd.org"
         static let get_imgs = "/getimgs/"
     }
 }
