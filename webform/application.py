@@ -8,8 +8,6 @@ from dotenv import dotenv_values
 import logging
 #from onelogin.saml2.auth import OneLogin_Saml2_Auth
 #from onelogin.saml2.utils import OneLogin_Saml2_Utils
-# ENV VARIABLES +
-#Second category added when updating spanish name from nothing, without updating english name initially
 config=dotenv_values("config.env")
 localTest= config["LOCAL_TEST"].lower() in ('true', '1', 't')
 DB_URI_TEMP = 'sqlite:///../ebdb.db' if localTest else f"mysql+pymysql://{config['USER']}:{config['PASS']}@{config['DB_URL']}/{config['DB_NAME']}"
@@ -52,6 +50,7 @@ def school_codes(code):
                     os.remove(os.path.join(app.config['UPLOAD_FOLDER'], prof.imgPath))
         db.session.delete(school_delete)
         db.session.commit()
+        print("Removed", school_delete.name)
     else:
         print("There are no schools matching that code")
     """
@@ -136,7 +135,7 @@ def load_school():
         school = School.query.filter_by(id=session["school_id"]).first()
         g.school = school
     else:
-        redirect(index)
+        redirect(url_for('index'))
 
 # Creates login page, if you have a GET request to load the page normally it loads index.html. If you send a POST request through the school number form if correct it sets the school id in session storage if wrong redirect
 @app.route("/login", methods=("GET", "POST"))
@@ -308,8 +307,8 @@ def school():
 
                 if allowed_file(file.filename):
                     filename = secure_filename(file.filename)
-                    if filename in os.listdir(app.config['UPLOAD_FOLDER']):
-                        filename = str(rand()) + filename
+                    while filename in os.listdir(app.config['UPLOAD_FOLDER']):
+                        filename = filename + str(random.randint(0, 9))
                     file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
                     s_imgPath = filename
                     g.school.imgPath = s_imgPath

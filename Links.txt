@@ -1,0 +1,8 @@
+https://stackoverflow.com/questions/63837847/how-to-enable-https-for-elastic-beanstalk-url
+https://stackoverflow.com/questions/58092523/https-for-elastic-beanstalk-aws-running-python-flask-application-unable-to-ge
+https://stackoverflow.com/questions/31486546/https-on-elastic-beanstalk-flask-application
+https://medium.com/@jameshamann/configuring-your-elastic-beanstalk-app-for-ssl-9065ca091f49
+
+might need to configure AWS alias in addition to CNAME?
+
+https://dev.mikamai.com/2016/11/08/flask-and-python-saml-on-amazon-elastic-beanstalk/
