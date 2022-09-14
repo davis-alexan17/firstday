@@ -10,7 +10,8 @@ import UIKit
 
 class CategoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     var categories: [Category]!
-    
+    var schoolName: String!
+    @IBOutlet weak var schoolNameLabel: UILabel!
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return categories!.count
     }
@@ -21,8 +22,10 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
         cell.label.baselineAdjustment = .none
         //let cellWidth = cell.frame.width // ?? collectionView.frame.width/2.01
         //let cellHeight = 150
-        
        // let labelHeight = 25
+        cell.layer.cornerRadius = 8
+        cell.layer.masksToBounds = true
+        schoolNameLabel.text = schoolName
       //  cell.label.frame = CGRect(x: 0, y: cellHeight-labelHeight, width: Int(cellWidth), height: labelHeight)
         cell.label.text = categories[indexPath.row].name()
         //cell.label.textAlignment = .center
@@ -52,6 +55,7 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
     }
     

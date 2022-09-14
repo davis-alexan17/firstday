@@ -39,9 +39,12 @@ class OpenViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: "OpenVCCell", for: indexPath) as? OpenCell)!
-        cell.label.text = schools[indexPath.row]
+        //cell.label.text = schools[indexPath.row]
         cell.backgroundColor = UIColor(rgb: 0x862e3d)
-        cell.label.adjustsFontSizeToFitWidth = true
+        cell.layer.cornerRadius = 8
+        cell.layer.masksToBounds = true
+        cell.layer.backgroundColor = UIColor.clear.cgColor
+        //cell.label.adjustsFontSizeToFitWidth = true
         let imgKey = Schools_Controller.schools[schools[indexPath.row]]!.imgKey
         if imgKey != nil && imgKey != "None" {
          cell.image.image = Schools_Controller.getImage(imgKey: imgKey!)
@@ -50,7 +53,8 @@ class OpenViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let school_name = (collectionView.cellForItem(at: indexPath) as? OpenCell)!.label.text!
+        //might cause issues with multiple schools
+        let school_name = schools[indexPath.row]//(collectionView.cellForItem(at: indexPath) as? OpenCell)!.label.text!
         self.performSegue(withIdentifier: "toCategories", sender: school_name)
     }
     
@@ -58,13 +62,14 @@ class OpenViewController: UIViewController, UICollectionViewDataSource, UICollec
         if let destination = segue.destination as? CategoryViewController {
             let schoolName = (sender as? String)!
             destination.categories = Schools_Controller.schools[schoolName]?.categories
+            destination.schoolName = schoolName
         }
     }
 }
 
 extension OpenViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 373, height: 187)
+        return CGSize(width: 200, height: 200)
     }
 }
 

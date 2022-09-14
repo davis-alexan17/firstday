@@ -61,7 +61,7 @@ class ItemViewController: UIViewController, UIScrollViewDelegate{
         if imgKey != nil && imgKey != "None"{
             let image = Schools_Controller.getImage(imgKey: imgKey!)
             let imageView = UIImageView(image: image!)
-            imageView.frame = CGRect(x:0, y:0, width:353, height:351)
+            imageView.frame = CGRect(x:0, y:0, width:viewArea.frame.size.width, height:viewArea.frame.size.height)
             imgSlide.addSubview(imageView)
             
         }
@@ -80,12 +80,13 @@ class ItemViewController: UIViewController, UIScrollViewDelegate{
                 }
                 
                 print("Title = \(vid.title), url = \(vid.videoURL), thumbnail = \(vid.thumbnailURL)")
+                //set up to detect resolutions
                 if let videoURL = vid.videoURL[.Quality360p] {
                     player = AVPlayer(url: videoURL)
                     DispatchQueue.main.async { [self] in
                     avpController.player = player
-                        avpController.view.frame.size.height = 351
-                        avpController.view.frame.size.width = 353
+                        avpController.view.frame.size.height = viewArea.frame.size.height
+                        avpController.view.frame.size.width = viewArea.frame.size.width
                     //avpController.view.frame = viewArea.frame
                     self.addChild(avpController)
                     vidSlide.addSubview(avpController.view)
@@ -106,17 +107,17 @@ class ItemViewController: UIViewController, UIScrollViewDelegate{
         
     }
     func setupSlideScrollView(slides: [Slide]){
-        viewArea.contentSize = CGSize(width: 353 * CGFloat(slides.count), height: 351)
+        viewArea.contentSize = CGSize(width: viewArea.frame.size.width * CGFloat(slides.count), height: viewArea.frame.size.height)
         viewArea.isPagingEnabled = true
         
         for i in 0 ..< slides.count{
-            slides[i].frame = CGRect(x:353 * CGFloat(i), y:0, width:353, height:351)
+            slides[i].frame = CGRect(x:viewArea.frame.size.width * CGFloat(i), y:0, width:viewArea.frame.size.width, height:viewArea.frame.size.height)
             viewArea.addSubview(slides[i])
         }
     }
     //makes page index change based on current page
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let pageIndex = round(viewArea.contentOffset.x/353)
+        let pageIndex = round(viewArea.contentOffset.x/viewArea.frame.size.width)
         pageControl.currentPage = Int(pageIndex)
     }
 
