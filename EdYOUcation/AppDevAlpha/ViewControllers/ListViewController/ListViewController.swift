@@ -21,11 +21,16 @@ class ListViewController: UIViewController, UICollectionViewDelegate, UICollecti
         cell.label.text = data[indexPath.row].name()
         cell.label.adjustsFontSizeToFitWidth = true
         cell.backgroundColor = UIColor(rgb: 0x862e3d)
+        cell.layer.cornerRadius = 8
+        cell.layer.masksToBounds = true
         guard let imgKey = data[indexPath.row].imgKey else {
             return cell
         }
         if imgKey != nil && imgKey != "None" {
         cell.image.image = Schools_Controller.getImage(imgKey: imgKey)
+            cell.layer.backgroundColor = UIColor.clear.cgColor
+            cell.layer.borderWidth = 2
+            cell.layer.borderColor = UIColor(rgb: 0x862e3d).cgColor
         }
         return cell
     }
