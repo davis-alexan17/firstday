@@ -1,5 +1,5 @@
-# EdYOUcation
-App development team project: EdYOUcation
+# First Day
+App development team project: First Day
 # EdYOUcation-main
 Refers to the swift app "AppDevAlpha" to be ran on an iPad (8th Generation)
 # appdevwebform-main
