@@ -10,28 +10,52 @@ import UIKit
 import HCVimeoVideoExtractor
 import AVKit
 import AVFoundation
-class OpenViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate  {
+import BottomPopup
+class OpenViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, BottomPopupDelegate  {
+    
+    
     var schools: [String] = []
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
-
         Schools_Controller.findSchools(school: nil) {
             for (key, _) in Schools_Controller.schools {
                 self.schools.append(key)
             }
             DispatchQueue.main.async { // Correct
-               self.collectionView.reloadData()
+                self.collectionView.reloadData()
             }
         }
         
         super.viewDidLoad()
+        //let viewTapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        //view.addGestureRecognizer(viewTapGesture)
+       
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if(UserDefaults.standard.bool(forKey: "popDisplayed") == false)
+        {
+            UserDefaults.standard.set(true, forKey: "popDisplayed")
+            guard let popupViewController = storyboard?.instantiateViewController(withIdentifier: "secondVC") as? PopupViewController else { return }
+            popupViewController.height = 200
+            popupViewController.topCornerRadius = 50
+            popupViewController.presentDuration = 1.5
+            popupViewController.dismissDuration = 1.5
+            popupViewController.shouldDismissInteractivelty = true
+            popupViewController.popupDelegate = self
+            self.present(popupViewController, animated: true, completion: nil)
+        }
+
         
         
     }
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
+    }
     
-
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print(schools, schools.count)
         return schools.count
@@ -47,7 +71,7 @@ class OpenViewController: UIViewController, UICollectionViewDataSource, UICollec
         //cell.label.adjustsFontSizeToFitWidth = true
         let imgKey = Schools_Controller.schools[schools[indexPath.row]]!.imgKey
         if imgKey != nil && imgKey != "None" {
-         cell.image.image = Schools_Controller.getImage(imgKey: imgKey!)
+            cell.image.image = Schools_Controller.getImage(imgKey: imgKey!)
         }
         return cell
     }
@@ -62,16 +86,18 @@ class OpenViewController: UIViewController, UICollectionViewDataSource, UICollec
         if let destination = segue.destination as? CategoryViewController {
             let schoolName = (sender as? String)!
             destination.categories = Schools_Controller.schools[schoolName]?.categories
-            destination.schoolName = schoolName
+            //school name wont populate if there are no categories
+            destination.schoolName = Schools_Controller.schools[schoolName]?.name
         }
     }
 }
-
 extension OpenViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 200, height: 200)
     }
 }
+
+
 
 //
 //extension ClubsViewController: UICollectionViewDelegateFlowLayout {

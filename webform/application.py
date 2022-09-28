@@ -5,7 +5,8 @@ from functools import wraps
 from werkzeug.utils import secure_filename
 import datetime
 from dotenv import dotenv_values
-import logging
+import traceback
+import hashlib
 #from onelogin.saml2.auth import OneLogin_Saml2_Auth
 #from onelogin.saml2.utils import OneLogin_Saml2_Utils
 config=dotenv_values("config.env")
@@ -26,7 +27,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 def rand():
     return random.randint(0, 10000000)
 # Importing here so app can initalize first
-from database import School, AuthManager, Category, Profile, db
+from database import School, AuthManager, Category, Profile, db, Login
 from swift_app import get_schools
 db.init_app(app)
 
@@ -43,12 +44,15 @@ def school_codes(code):
     auths = [row.code for row in AuthManager.query.all()]
     if code in auths:
         auth_entry = AuthManager.query.filter_by(code=code).first()
+        login_entry = Login.query.filter_by(id=auth_entry.school_id).first()
         school_delete = School.query.filter_by(id=auth_entry.school_id).first()
         for category in school_delete.categories:
             for prof in category.profiles:
                 if prof.imgPath is not None:
                     os.remove(os.path.join(app.config['UPLOAD_FOLDER'], prof.imgPath))
         db.session.delete(school_delete)
+        db.session.delete(login_entry)
+        db.session.delete(auth_entry)
         db.session.commit()
         print("Removed", school_delete.name)
     else:
@@ -78,17 +82,24 @@ def test_json():
 
 @app.cli.command('create')
 @click.argument('name')
-def create_school(name):
-    new_school = School(name=name, hidden=False)
-    code = rand()
-    while code in [int(row.code) for row in AuthManager.query.all()]:
+@click.argument("user")
+@click.argument("passwd")
+def create_school(name, user: str, passwd: str):
+    if Login.query.filter_by(username =user).first():
+        print("Error, this username already exists")
+    else:
+        new_school = School(name=name, hidden=False)
         code = rand()
-    auth = AuthManager(code=code, school_id=new_school.id)
-    new_school.auth = auth
-    db.session.add(auth)
-    db.session.add(new_school)
-    db.session.commit()
-    print("School: %s added successfully\nCode: %s" % (name, code))
+        while code in [int(row.code) for row in AuthManager.query.all()]:
+            code = rand()
+        auth = AuthManager(code=code, school_id=new_school.id)
+        new_school.auth = auth
+        logincreds = Login(username=hashlib.sha256(user.encode()).hexdigest(), password=hashlib.sha256(passwd.encode()).hexdigest(), code=auth.code)
+        db.session.add(logincreds)
+        db.session.add(auth)
+        db.session.add(new_school)
+        db.session.commit()
+        print("School: %s added successfully\nCode: %s" % (name, code))
 
 
 @app.cli.command('test')
@@ -117,12 +128,20 @@ def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
         try:
-            if session['user'] != hash("test") or session['pass'] != hash("test"):
-                return redirect(url_for('login'))
+            logged = None
+            if "codes" in session:
+                logged = Login.query.filter_by(username = session['user'], password = session['pass'], code=session['codes']).first()
+            elif "user" in session and "pass" in session:
+                logged = Login.query.filter_by(username = session['user'], password = session['pass']).first()
+            if logged:
+                session["codes"] = logged.code
+            else:
+                flash("Incorrect Login")
+                return redirect(url_for('login'))      
             #if not hasattr(g, 'school') or g.school is None:
             #    return redirect(url_for('login', next=request.url))
-        except Exception as e: 
-            print(e)
+        except Exception: 
+            print(traceback.format_exc())
             return redirect(url_for('login'))
         return f(*args, **kwargs)
     return decorated_function
@@ -142,8 +161,8 @@ def load_school():
 def login():
     if request.method == "POST":
         if request.form['username'] is not None and request.form['password'] is not None:
-            session['user'] = hash(request.form['username'])
-            session['pass'] = hash(request.form['password'])
+            session['user'] = hashlib.sha256(request.form['username'].encode()).hexdigest()
+            session['pass'] = hashlib.sha256(request.form['password'].encode()).hexdigest()
             #flash("Incorrect Login")
             return redirect(url_for('index'))
         else:
@@ -157,7 +176,7 @@ def login():
 def index():
     if request.method == "GET":
         g.school = None
-        return render_template("index.html", auths=AuthManager.query.all(), School=School)
+        return render_template("index.html", auths=AuthManager.query.filter_by(code=session['codes']), School=School)
     else:
         y = request.form['code']
         s = AuthManager.query.filter_by(code=y).first()
@@ -182,6 +201,7 @@ def allowed_file(filename):
 def logout():
     del session["user"]
     del session["pass"]
+    del session["codes"]
     return redirect(url_for('login'))
 # Could be more secure. Not important
 

@@ -15,6 +15,7 @@
 		63415A5A25184CA50085836B /* OpenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63415A5925184CA50085836B /* OpenCell.swift */; };
 		63415A5C25184CD20085836B /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63415A5B25184CD20085836B /* CategoryCell.swift */; };
 		63415A5E25184CF40085836B /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63415A5D25184CF40085836B /* ListCell.swift */; };
+		8AAA43D428E2138500BCB135 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAA43D328E2138500BCB135 /* PopupViewController.swift */; };
 		CEA972FD23B2ABB100309B2D /* SchoolStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA972FC23B2ABB100309B2D /* SchoolStruct.swift */; };
 		F4B10AF1233430AD00890FAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B10AF0233430AD00890FAC /* AppDelegate.swift */; };
 		F4B10AF6233430AD00890FAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4B10AF4233430AD00890FAC /* Main.storyboard */; };
@@ -27,12 +28,13 @@
 		3DE9382C6F3FA910C97BF62D /* Pods-AppDevAlpha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppDevAlpha.release.xcconfig"; path = "Target Support Files/Pods-AppDevAlpha/Pods-AppDevAlpha.release.xcconfig"; sourceTree = "<group>"; };
 		63415A4C2517FE540085836B /* OpenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenViewController.swift; sourceTree = "<group>"; };
 		63415A4E2517FE670085836B /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
-		63415A502517FEF90085836B /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
+		63415A502517FEF90085836B /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		63415A5225182DC20085836B /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		63415A5925184CA50085836B /* OpenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCell.swift; sourceTree = "<group>"; };
 		63415A5B25184CD20085836B /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		63415A5D25184CF40085836B /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 		6AFF70B5F77A87CAF3626135 /* Pods-AppDevAlpha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppDevAlpha.debug.xcconfig"; path = "Target Support Files/Pods-AppDevAlpha/Pods-AppDevAlpha.debug.xcconfig"; sourceTree = "<group>"; };
+		8AAA43D328E2138500BCB135 /* PopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		B5AB3351668150584BCA4118 /* Pods_AppDevAlpha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppDevAlpha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA972FC23B2ABB100309B2D /* SchoolStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolStruct.swift; sourceTree = "<group>"; };
 		F4B10AED233430AD00890FAC /* AppDevAlpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppDevAlpha.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +63,7 @@
 		63415A4B2517FE0B0085836B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				8AAA43D328E2138500BCB135 /* PopupViewController.swift */,
 				63415A5625184C5E0085836B /* OpenViewController */,
 				63415A5725184C690085836B /* CategoryViewController */,
 				63415A5825184C740085836B /* ListViewController */,
@@ -268,6 +271,7 @@
 				63415A512517FEF90085836B /* ItemViewController.swift in Sources */,
 				CEA972FD23B2ABB100309B2D /* SchoolStruct.swift in Sources */,
 				63415A4D2517FE540085836B /* OpenViewController.swift in Sources */,
+				8AAA43D428E2138500BCB135 /* PopupViewController.swift in Sources */,
 				F4B10AF1233430AD00890FAC /* AppDelegate.swift in Sources */,
 				63415A5E25184CF40085836B /* ListCell.swift in Sources */,
 				63415A4F2517FE670085836B /* CategoryViewController.swift in Sources */,
@@ -427,12 +431,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2A5G5V4XMB;
 				INFOPLIST_FILE = AppDevAlpha/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.svvsd.AppDevAlpha;
+				PRODUCT_BUNDLE_IDENTIFIER = org.svvsd.FirstDay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -447,12 +451,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2A5G5V4XMB;
 				INFOPLIST_FILE = AppDevAlpha/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.svvsd.AppDevAlpha;
+				PRODUCT_BUNDLE_IDENTIFIER = org.svvsd.FirstDay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;

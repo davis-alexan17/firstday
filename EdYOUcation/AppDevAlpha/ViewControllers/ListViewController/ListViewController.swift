@@ -11,7 +11,7 @@ import UIKit
 class ListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     var data: [Profile]!
     var cat: Profile?
-    
+    var noImage: [Int] = []
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data.count
     }
@@ -20,17 +20,19 @@ class ListViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: "ListCell", for: indexPath) as? ListCell)!
         cell.label.text = data[indexPath.row].name()
         cell.label.adjustsFontSizeToFitWidth = true
-        cell.backgroundColor = UIColor(rgb: 0x862e3d)
+        cell.backgroundColor = UIColor(rgb: 0x862633)
         cell.layer.cornerRadius = 8
         cell.layer.masksToBounds = true
         guard let imgKey = data[indexPath.row].imgKey else {
+            cell.label.frame.origin = CGPoint(x:10, y:23)
+            cell.label.numberOfLines = 3
             return cell
         }
-        if imgKey != nil && imgKey != "None" {
-        cell.image.image = Schools_Controller.getImage(imgKey: imgKey)
+        if !imgKey.isEmpty && imgKey != "None" && imgKey != ""{
+            cell.image.image = Schools_Controller.getImage(imgKey: imgKey)
             cell.layer.backgroundColor = UIColor.clear.cgColor
             cell.layer.borderWidth = 2
-            cell.layer.borderColor = UIColor(rgb: 0x862e3d).cgColor
+            cell.layer.borderColor = UIColor(rgb: 0x862633).cgColor
         }
         return cell
     }
@@ -44,9 +46,10 @@ class ListViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewDidLoad() {
         let d = cat!
         let imgKey = d.imgKey!
-        if imgKey != nil && imgKey != "None"{
+        if !imgKey.isEmpty && imgKey != "None" {
         self.image.image = Schools_Controller.getImage(imgKey: imgKey)
         }
+        
         self.textArea.text = d.text()
         self.headTitle.text = d.name()
         self.headTitle.adjustsFontSizeToFitWidth = true
@@ -70,6 +73,11 @@ class ListViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
 extension ListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 176, height: 182)
-    }
+        guard let _ = data[indexPath.row].imgKey else {
+            return CGSize(width: 176, height: 80)
+
+        }
+
+            return CGSize(width: 176, height: 182)
+            }
 }

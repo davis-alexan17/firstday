@@ -196,7 +196,7 @@ class Schools_Controller {
     */
     
     static func findSchools(school: String?, completion: @escaping ()->Void) {
-        getData(from: URL(string: config.api.base_url+"/get_json/schools")!)  // "http://appdev-env-1.eba-c3upifba.us-west-2.elasticbeanstalk.com/get_json/schools"
+        getData(from: URL(string: config.api.base_url+"/get_json/schools")!)  
         {(data, res, error) in
             
             guard (data != nil) else {
@@ -217,9 +217,6 @@ class Schools_Controller {
                 // Decode data from GET request, and save it to the class for use
 //                print(type(of: data!))
                 let stringValue = String(decoding: data!, as: UTF8.self)
-                print(stringValue)
-                print("AT THIS POINT: ", "\n\n\n")
-
                 let decoder = JSONDecoder()
                 let schoolList = try decoder.decode([School_Data].self, from: data!)
                 for school in schoolList {
@@ -246,7 +243,6 @@ class Schools_Controller {
         do {
             if school_.id != 0 && school_.imgKey != nil && school_.imgKey != "None" {
                 let data = try? Data(contentsOf: URL(string: school_.img_url())!)
-                print("\n\n\nDEBUG:\n\n\n", school_.img_url())
                 print(data)
                 if(data != nil){
                 _ = saveImage(image: UIImage(data: data!)!, fileName: school_.imgKey!)

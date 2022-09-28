@@ -1,16 +1,20 @@
 PODS:
+  - BottomPopup (0.7.0)
   - HCVimeoVideoExtractor (0.0.1)
 
 DEPENDENCIES:
+  - BottomPopup
   - HCVimeoVideoExtractor
 
 SPEC REPOS:
   trunk:
+    - BottomPopup
     - HCVimeoVideoExtractor
 
 SPEC CHECKSUMS:
+  BottomPopup: fe3e284628532f99093ae68c592c6b9d392c972d
   HCVimeoVideoExtractor: d3c251280f7027ffd324266e1930b3618e0adb46
 
-PODFILE CHECKSUM: 76bba96ce8da3272f31582d985e186964b9c82ef
+PODFILE CHECKSUM: 3f324d1a7f94e6ba209e10f43140fa40371ecf3f
 
 COCOAPODS: 1.11.3

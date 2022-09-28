@@ -51,7 +51,13 @@ class Category(db.Model):
     hidden = db.Column(db.Boolean)
     child = relationship(Profile, backref="parent", cascade="delete")
 
-
+class Login(db.Model):
+    __tablename__ = "login"
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(500))
+    password = db.Column(db.String(500))
+    school_id = db.Column(db.Integer, db.ForeignKey("school.id"))
+    code = db.Column(db.String, db.ForeignKey("auth_manager.code"))
 class AuthManager(db.Model):
     __tablename__ = "auth_manager"
     id = db.Column(db.Integer, primary_key=True)
@@ -77,3 +83,4 @@ class School(db.Model):
     # set uselist to false to ensure a 1 to 1 relationship
     child = relationship(AuthManager, backref="parent", cascade="delete")
     child2 = relationship(Category, backref="parent", cascade="delete")
+    child3 = relationship(Login, backref="parent", cascade="delete")

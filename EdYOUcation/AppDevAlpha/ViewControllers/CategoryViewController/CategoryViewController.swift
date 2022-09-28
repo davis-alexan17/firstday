@@ -18,7 +18,7 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as? CategoryCell)!
-        cell.backgroundColor = UIColor(rgb: 0x862e3d)
+        cell.backgroundColor = UIColor(rgb: 0x862633)
         cell.label.baselineAdjustment = .none
         //let cellWidth = cell.frame.width // ?? collectionView.frame.width/2.01
         //let cellHeight = 150
@@ -32,7 +32,7 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
         cell.label.adjustsFontSizeToFitWidth = true
         
         let imgKey = categories[indexPath.row].imgKey
-        if imgKey != nil && imgKey != "None" {
+        if !imgKey!.isEmpty && imgKey != "None" {
             cell.image.image = Schools_Controller.getImage(imgKey: imgKey!)
           //  cell.image.frame = CGRect(x: 0, y: 0, width: Double(cellWidth), height: Double(cellHeight-labelHeight))
         
