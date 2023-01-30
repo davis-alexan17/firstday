@@ -44,7 +44,6 @@ class Category(db.Model):
     name_esp = db.Column(db.String(50))
 
     imgPath = db.Column(db.String(50), nullable=True)
-    vimeoLink = db.Column(db.String(100), nullable=True)
 
     text_eng = db.Column(db.String(1000))
     text_esp = db.Column(db.String(1000))   
@@ -57,7 +56,8 @@ class Login(db.Model):
     username = db.Column(db.String(500))
     password = db.Column(db.String(500))
     school_id = db.Column(db.Integer, db.ForeignKey("school.id"))
-    code = db.Column(db.String, db.ForeignKey("auth_manager.code"))
+    #add foreign key later
+    code = db.Column(db.String(50))
 class AuthManager(db.Model):
     __tablename__ = "auth_manager"
     id = db.Column(db.Integer, primary_key=True)

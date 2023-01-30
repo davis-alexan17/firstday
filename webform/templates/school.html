@@ -63,7 +63,6 @@
             $('#name_esp').val("")
             $('#textBody_eng').val("")
             $('#textBody_esp').val("")
-            $('#vimeoLink').val("")
             $('#saveOrSubmit').val("Submit");
             $('#modalLabel').html(`Create category`);
             $('#updateCheckBox').removeAttr('checked');
@@ -94,7 +93,6 @@
                $('#name_esp').val(json.name_esp)
                $('#textBody_esp').val(json.text_esp)
                $('#textBody_eng').val(json.text_eng)
-               $('#vimeoLink').val(json.vimeoLink)
               
                const hiddenBtn = $('#hideCategoryButton');
                const hiddenTxt = $('#deleteCategorySubmit');
@@ -310,12 +308,6 @@
             <textarea name="text_esp" class="form-control light-label" id="textBody_esp" rows="3" placeholder="espanol"style="margin-top: 10px;"></textarea>
           </div>
 
-          <!-- VIMEO LINK -->
-          <div class="form-group">
-            <label for="vimeoLink" class="bold-label">Vimeo Link</label>
-            <hr>
-            <input name="vimeoLink" type="text" class="form-control light-label" id="vimeoLink" aria-describedby="nameInput" placeholder="Enter a link/URL to a vimeo video" style="margin-top: 10px;">
-          </div>
 
           <!-- ICON SELECT -->
           <div class="form-group">

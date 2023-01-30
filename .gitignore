@@ -12,5 +12,7 @@
 *.zip
 errors.txt
 *.DS_Store
+**/uploads
 **/__pycache__
 **/venv
+ebdb.db

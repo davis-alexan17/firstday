@@ -15,9 +15,9 @@ class PopupViewController: BottomPopupViewController {
     var dismissDuration: Double?
     var shouldDismissInteractivelty: Bool?
 
-    @IBAction func dismissButtonTapped(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
-    }
+//    @IBAction func dismissButtonTapped(_ sender: UIButton) {
+  //      dismiss(animated: true, completion: nil)
+    //}
     
     // MARK: - BottomPopupAttributesDelegate Variables
     override var popupHeight: CGFloat { height ?? 300.0 }

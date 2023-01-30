@@ -270,8 +270,7 @@ def category_data(id):
     else:
         img_path = category.imgPath
     return jsonify(name_eng=category.name_eng, name_esp=category.name_esp, text_eng=category.text_eng,
-                   text_esp=category.text_esp, imgPath=category.imgPath, hidden=category.hidden,
-                   vimeoLink=category.vimeoLink)
+                   text_esp=category.text_esp, imgPath=category.imgPath, hidden=category.hidden)
 
 # returns JSON if profile info
 
@@ -374,11 +373,6 @@ def school():
             icon_path = request.form['iconPath']
         else:
             icon_path = None
-
-        if "vimeoLink" in request.form:
-            vimeoLink = request.form['vimeoLink']
-        else:
-            vimeoLink = None
         catId = request.form['catid']
 
         # This should be tested!!!!! -- Changed to catId tracking from html, not sure how this will hold up but had odd issues with the other version,might want to test old version on windows
@@ -393,7 +387,6 @@ def school():
                 category.text_eng = c_text_eng
                 category.text_esp = c_text_esp
                 category.imgPath = icon_path
-                category.vimeoLink = vimeoLink
                 db.session.commit()
 
             """
@@ -417,7 +410,6 @@ def school():
                                     name_esp=c_name_esp,
                                     text_eng=c_text_eng,
                                     text_esp=c_text_esp,
-                                    vimeoLink=vimeoLink,
                                     imgPath=icon_path,
                                     hidden=False)
             db.session.add(new_category)
